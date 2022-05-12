@@ -48,7 +48,6 @@ function PersonalPlants() {
             })} */}
           </div>
         </MyWish>
-
       </div>
     </PersonalGarden>
   );
