@@ -7,41 +7,62 @@ const PlantCard = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 230px;
-    height: 290px;
+    width: 200px;
+    height: 280px;
     border-radius: 15px;
     background-color: #ffffff;
-    margin-bottom: 15px;
+    box-shadow: 0px 5px 5px gray;
 
     .img--PlantImage {
       border-radius: 15px 15px 0 0;
-      height: 60%;
+      height: 50%;
       width: 100%;
       object-fit: cover;
+      box-shadow: 0px 1px 5px gray;
+      
     }
 
-    .h3--PlantTitle{
-      color: #b7d251;
+    .h3--PlantTitle {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      color: #56b297;
       font-family: "Inter", sans;
+      width: 60%;
       font-weight: 1;
-      font-size: 20px;
-      height: 5%;
+      font-size: 17px;
+      height: 3%;
+    }
+
+    .p--scientificName{
+      color: black;
+      font-size: 16px;
+      height: 1%;
     }
 
     .div--CardButtons {
-        display: flex;
-        width: 100%;
-        height: 35%;
-        justify-content: space-around;
-        align-items: center;
+      display: flex;
+      width: 50%;
+      height: 25%;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .button--Pot{
-        width: 30px;
-        height: 30px;
-    }    
+    .button--Pot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0px 3px 5px gray;
+      color: #56b297;
+      font-size: 20px;
+      font-weight: bold;
 
-
+    }
   }
 `;
 export default PlantCard;
