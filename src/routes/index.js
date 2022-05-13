@@ -1,9 +1,13 @@
-import { Route, Switch } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+// import Route from './route';
+
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 
 function Routes() {
+
   return (
     <Switch>
       <Route path="/">
@@ -12,9 +16,9 @@ function Routes() {
       {/* <Route path="/login">
         <Login />
       </Route>
-      <Route path="/home">
+      <Route isPrivate path="/home">
         <Home />
-      </Route> */}
+      </Route>  */}
     </Switch>
   );
 }

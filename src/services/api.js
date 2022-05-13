@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: "",
+    baseURL: "https://my-plants-app.herokuapp.com",
 });
 
 export default api
