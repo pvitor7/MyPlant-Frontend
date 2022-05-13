@@ -8,8 +8,7 @@ import { FiUser, FiMail, FiLock } from 'react-icons/fi'
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup";
-import { toast } from 'react-toastify';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUpThunk } from "../../store/modules/user/thunks";
