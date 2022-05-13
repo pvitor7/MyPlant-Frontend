@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const PersonalGarden = styled.div`
   @media (min-width: 320px) {
-    width: 100vw;
+    width: calc(100vw -30px);
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ export const PersonalGarden = styled.div`
       font-weight: 1;
       font-size: 25px;
       color: #b7d251;
-      height: 50px;      
+      height: 50px;
     }
 
     .div--MyGardens--area {
@@ -37,7 +37,7 @@ export const PersonalGarden = styled.div`
     .div--MyGardens--area {
       width: 95%;
       max-width: none;
-      max-width: 1024px;
+      max-width: 1080px;
       flex-direction: row;
       gap: 50px;
       align-items: flex-start;
@@ -48,7 +48,6 @@ export const PersonalGarden = styled.div`
       width: 95%;
     }
   }
- 
 `;
 
 export const MyGarden = styled.div`
@@ -57,30 +56,31 @@ export const MyGarden = styled.div`
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    /* width: 85%; */
     width: calc(100% - 60px);
-    max-width: 920px;
     height: ${(props) => `${props.open}%`};
     background-color: #56b297;
     box-shadow: 0px 5px 5px gray;
-    padding-bottom: 15px;
+    padding: 10px;
 
     .div--MyGardens--area {
       display: flex;
-      width: 100vw;
       flex-direction: column;
       align-items: center;
     }
 
     .div--MyGarden--list {
-      display: flex;
+      /* display: flex; */
+      display: ${(props) => `${props.display}`};
       flex-wrap: wrap;
       align-items: center;
       width: 100%;
+      box-sizing: border-box;
+      margin-top: ${(props) => `${props.marginG}px`};
       overflow: auto;
       gap: 20px;
       justify-content: center;
       padding-bottom: 30px;
+
     }
 
     .h4--MyGarden {
@@ -90,10 +90,11 @@ export const MyGarden = styled.div`
       width: 75%;
       max-width: 250px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       margin: 25px 5px;
       text-shadow: darkgray 1rem;
       text-shadow: 0.1em 0.1em 0.4em black;
+      gap: 10px;
     }
 
     .button--MyGarden {
@@ -113,10 +114,18 @@ export const MyGarden = styled.div`
   }
 
   @media (min-width: 940px) {
+    max-width: 100%;
     height: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
 
     .div--MyGarden--list {
       overflow: auto;
+      display: flex;
+    }
+
+    .button--MyGarden {
+      display: none;
     }
   }
 `;
@@ -134,23 +143,25 @@ export const MyWish = styled.div`
     box-shadow: 0px 5px 5px gray;
     margin-top: 10px;
     flex-direction: column;
-    padding-bottom: 15px;
+    padding: 10px;
 
     .MyWish--h4 {
       color: #ffffff;
       font-size: 25px;
       font-family: "Inter", sans-serif;
-      width: 75%;
+      width: 90%;
       max-width: 250px;
       display: flex;
       justify-content: center;
       margin: 25px 5px;
       text-shadow: darkgray 1rem;
       text-shadow: 0.1em 0.1em 0.4em black;
+      gap: 10px;
     }
 
     .div--MyWish--list {
-      display: flex;
+      /* display: flex; */
+      display: ${(props) => `${props.display}`};
       flex-wrap: wrap;
       align-items: center;
       width: 100%;
@@ -158,11 +169,35 @@ export const MyWish = styled.div`
       gap: 20px;
       justify-content: center;
       padding-bottom: 20px;
+      margin-top: ${(props) => `${props.marginW}px`};
+    }
+
+    .button--MyWish {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      box-shadow: 0px 5px 5px gray;
+      color: #56b297;
+      font-size: 30px;
+      font-weight: bold;
     }
   }
   @media (min-width: 940px) {
     height: 90%;
     margin-top: 0px;
     border-radius: 15px;
+
+    .div--MyWish--list{
+      display: flex;
+    }
+
+    .button--MyWish {
+      display: none;
+    }
   }
 `;

@@ -19,33 +19,36 @@ const PlantCard = styled.div`
       width: 100%;
       object-fit: cover;
       box-shadow: 0px 1px 5px gray;
-      
     }
 
     .h3--PlantTitle {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      color: #56b297;
-      font-family: "Inter", sans;
+      color: #b7d251;
+      font-family: "Inter", sans-serif;
       width: 60%;
       font-weight: 1;
       font-size: 17px;
       height: 3%;
     }
 
-    .p--scientificName{
+    .p--scientificName {
       color: black;
-      font-size: 16px;
       height: 1%;
+      font-size: 15px;
+      font-family: "Nunito";
+      font-style: italic;
+      color: #56b297;
     }
 
     .div--CardButtons {
       display: flex;
-      width: 50%;
+      width: 60%;
       height: 25%;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      gap: 30px;
     }
 
     .button--Pot {
@@ -61,7 +64,6 @@ const PlantCard = styled.div`
       color: #56b297;
       font-size: 20px;
       font-weight: bold;
-
     }
   }
 `;
