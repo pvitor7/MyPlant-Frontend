@@ -2,7 +2,7 @@ import { legacy_createStore as createStore, combineReducers, applyMiddleware } f
 import thunk from 'redux-thunk';
 import dataPlantsReducer from './modules/plants/reducer';
 
-const reducers = combineReducers({ myPlants: dataPlantsReducer });
+const reducers = combineReducers({ userPlants: dataPlantsReducer });
 
 const store = createStore(reducers, applyMiddleware(thunk));
 

@@ -80,7 +80,17 @@ export const MyGarden = styled.div`
       gap: 20px;
       justify-content: center;
       padding-bottom: 30px;
+    }
 
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .div--MyGarden--list::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .div--MyGarden--list {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
 
     .h4--MyGarden {
@@ -170,6 +180,17 @@ export const MyWish = styled.div`
       justify-content: center;
       padding-bottom: 20px;
       margin-top: ${(props) => `${props.marginW}px`};
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .div--MyWish--list::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .div--MyWish--list {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
 
     .button--MyWish {

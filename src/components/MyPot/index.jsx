@@ -8,9 +8,9 @@ function MyPot({ plant, myChild = false }) {
  
   return (
     <PlantCard>
-      <img className="img--PlantImage" src={plant.image} />
+      <img className="img--PlantImage" src={plant.imgUrl} />
       <h3 className="h3--PlantTitle">{plant.name}</h3>
-      <p className="p--scientificName">({plant.scientificName})</p>
+      <p className="p--scientificName">({plant.sci_name})</p>
       <div className="div--CardButtons">
         {
         myChild && (<button onClick={() => console.log('folhinha')} className="button--Pot"><BiFile /></button>)}
