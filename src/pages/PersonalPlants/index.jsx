@@ -94,7 +94,7 @@ function PersonalPlants() {
             {
               plantsUser.length  > 0 && (           
                plantsUser.map((plant, index) => {
-              return <MyPot myChild key={index} plant={plant} />;
+              return <MyPot dispatch={dispatch} myChild key={index} plant={plant} />;
             })
             )
             }

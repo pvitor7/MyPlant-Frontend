@@ -18,6 +18,26 @@ function getPrivatePlants(dispatch) {
       dispatch(personalPlants(res.data.plants));
     })
     .catch((error) => console.log(error));
+    console.log('peguei elas')
+}
+
+
+export function deletePrivatePlants(id, dispatch){
+
+  const token = JSON.parse(localStorage.getItem("myPlantToken"));
+
+  axios
+  .delete(`https://my-plants-app.herokuapp.com/plants/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  .then((res) => {
+    getPrivatePlants(dispatch)
+    console.log(res)
+    })
+  .catch((error) => console.log(error));
+  console.log(`apaguei ela ${id}`)
 }
 
 export default getPrivatePlants;
