@@ -1,5 +1,5 @@
-import styled, { keyframes } from "styled-components";
-import SignupImagePlants from "../../assets/images/plants.png";
+import styled, { keyframes } from 'styled-components';
+import SignupImagePlants from '../../assets/images/plants.png';
 
 export const Container = styled.div`
   height: 100vh;
@@ -102,5 +102,3 @@ export const AnimationContainer = styled.div`
     color: var(--negative)
   }
 `;
-
-

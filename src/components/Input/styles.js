@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
 `;
 
-export const InputContainer = styled.div`
+const InputContainer = styled.div`
   background: var(--white);
   border-radius: 10px;
   border: 2px solid var(--blue);
@@ -28,9 +28,8 @@ export const InputContainer = styled.div`
         border: 2px solid var(--green);
       }
 
-  ${(props) =>
-    props.isErrored &&
-    css`
+  ${(props) => props.isErrored
+    && css`
       border-color: var(--negative);
     `}
 
@@ -50,3 +49,5 @@ export const InputContainer = styled.div`
     color: var(--green);
   }
 `;
+
+export { Container, InputContainer };

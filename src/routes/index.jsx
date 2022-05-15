@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 // import Route from './route';
 
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 function Routes() {
   return (

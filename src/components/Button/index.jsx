@@ -1,11 +1,12 @@
-import { Container } from "./styles";
+import React from 'react';
+import Container from './styles';
 
-const Button = ({ children, GreenSchema = false, ...rest }) => {
-    return (
-        <Container GreenSchema={GreenSchema} type="button" {...rest}>
-            {children}
-        </Container>
-    )
-};
+function Button({ children, GreenSchema = false, ...rest }) {
+  return (
+    <Container GreenSchema={GreenSchema} type="button" {...rest}>
+      {children}
+    </Container>
+  );
+}
 
 export default Button;

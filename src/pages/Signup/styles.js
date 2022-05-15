@@ -1,7 +1,7 @@
-import styled, { keyframes } from "styled-components";
-import SignupImageWomen from "../../assets/images/women.png";
+import styled, { keyframes } from 'styled-components';
+import SignupImageWomen from '../../assets/images/women.png';
 
-export const Container = styled.div`
+const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
@@ -20,7 +20,7 @@ const appearFromLeft = keyframes`
   }
 `;
 
-export const Background = styled.div`
+const Background = styled.div`
   @media (min-width: 1100px) {
     flex: 1;
     background: url(${SignupImageWomen}) no-repeat center left, var(--white);
@@ -28,7 +28,7 @@ export const Background = styled.div`
   }
 `;
 
-export const Content = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@ export const Content = styled.div`
   max-width: 800px;
 `;
 
-export const AnimationContainer = styled.div`
+const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,4 +87,6 @@ export const AnimationContainer = styled.div`
   }
 `;
 
-
+export {
+  Container, Background, Content, AnimationContainer,
+};
