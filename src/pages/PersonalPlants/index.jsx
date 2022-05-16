@@ -41,7 +41,6 @@ function PersonalPlants() {
 
     const token = JSON.parse(localStorage.getItem("myPlantToken"));
     const minhasPlantas = [...plantas]
-    // console.log(minhasPlantas)
     
     //Função para cadastrar plantas na API, elas estão sumindo
 
@@ -126,7 +125,7 @@ function PersonalPlants() {
           </h4>
           <div className="div--MyWish--list">
             {favouritePlantas.map((plant, index) => {
-              return <MyPot plant={plant} key={index} />;
+              return <MyPot dispatch={dispatch} addMyWish plant={plant} key={index} />;
             })}
           </div>
         </MyWish>

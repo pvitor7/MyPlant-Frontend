@@ -2,11 +2,11 @@
 import "./styled";
 import { BiFile } from "react-icons/bi";
 import PlantCard from "./styled";
-import { deletePrivatePlants } from "../../store/modules/plants/thunks";
+import { addPrivatePlants, deletePrivatePlants } from "../../store/modules/plants/thunks";
 import ModalInfoPlant from "../ModalInfoPlant";
 import { useState } from "react";
 
-function MyPot({ dispatch, plant, myChild = false }) {
+function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
 
   const [modal, setModal] = useState(false);
 
@@ -29,6 +29,14 @@ function MyPot({ dispatch, plant, myChild = false }) {
             <BiFile />
           </button>
         )}
+
+        {addMyWish && (<button onClick={() => {
+          console.log(plant)
+          addPrivatePlants(dispatch, plant);
+          console.log('Adicionar as minhas')
+          }}  
+          className="button--Pot">+</button>)}
+        
         <button  className="button--Pot" onClick={() => {
           deletePrivatePlants(plant.id, dispatch);
           }}>
