@@ -9,7 +9,7 @@ function Menu({sair}){
 
     const redirecionamento = useHistory()
 
-    function teste(destino){
+    function pages(destino){
         redirecionamento.push(destino)
     }
 
@@ -22,15 +22,15 @@ function Menu({sair}){
     </header>
     <main>
         <ul>
-            <li onClick={() => teste("/Login")}><p>Plantas</p></li>
-            <li onClick={() => teste("/Informações")}><p>Sobre o My Plant</p></li>
-            <li onClick={() => teste("/Sobre")}><p>Equipe</p></li>
-            <li onClick={() => teste("/Contrato")}><p>Termos de uso</p></li>
+            <li onClick={() => pages("/")}><p>Plantas</p></li>
+            <li onClick={() => pages("/Informações")}><p>Sobre o My Plant</p></li>
+            <li onClick={() => pages("/Sobre")}><p>Equipe</p></li>
+            <li onClick={() => pages("/Contrato")}><p>Termos de uso</p></li>
         </ul>
 
         <div>
             <img></img>
-            <p>Acesse sua conta ou <button>Cadastre-se</button> </p>
+            <p>Acesse sua conta ou <button onClick={() => pages("/Cadastre-se")}>Cadastre-se</button> </p>
         </div>
     
      <button className="buttonreturn" onClick={() => sair(false)}><img src={fechar}/></button>

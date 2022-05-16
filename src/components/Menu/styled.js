@@ -2,7 +2,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
- 
+
+ max-width: 350px;
+ width: 100%;
  * {
     box-sizing: border-box;
     font-family: "Nunito";
@@ -11,8 +13,6 @@ const Container = styled.div`
     color: #56b297;
     border-radius: 4px;
   }
-  max-width: 350px;
-  width: 100%;
   header {
     display: flex;
     justify-content: space-between;
@@ -86,6 +86,10 @@ const Container = styled.div`
 
     header p {
     font-size: 18px;
+  }
+
+  .buttonreturn{
+    margin-left: 200px;
   }
 
   }

@@ -9,8 +9,12 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Header(){
 
-    const history = useHistory()
+    const redirecionamento = useHistory()
     const [menuOpen, setMenuOpen] = useState(false)
+
+    function home(){
+        redirecionamento.push("/")
+    }
 
     function menuAtivo(){
 
@@ -30,7 +34,7 @@ function Header(){
 
         ): null }
 
-         <img src={logo}/>
+         <img src={logo} onClick={home}/>
          <div className="button-login">
          <img src = {seta} ></img>
           <button>Entrar</button>

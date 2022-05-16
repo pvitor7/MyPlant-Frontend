@@ -38,6 +38,7 @@ const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,12 +55,29 @@ const Container = styled.div`
   header img {
     max-width: 100px;
     max-height: 15vh;
+    cursor: pointer;
   }
   header button {
       border: none;
       background-color: transparent;
       font-weight: 400;
       cursor: pointer;
+  }
+
+  @media (max-width:700px){
+    .icon-menu{
+    font-size: 0px;
+  }
+  .icon-menu img{
+    width: 60%;
+    height: 60%;
+  }
+  .button-login button{
+    font-size: 0px;
+  }
+  .button-login img {
+    width: 100%;
+  }
   }
 `;
 export default Container;
