@@ -6,8 +6,9 @@ import {
 
 import thunk from 'redux-thunk';
 import userReducer from './modules/user/reducer';
+import dataPlantsReducer from './modules/plants/reducer';
 
-const reducers = combineReducers({ userRegister: userReducer });
+const reducers = combineReducers({ userPlants: dataPlantsReducer, userRegister: userReducer });
 const store = createStore(reducers, applyMiddleware(thunk));
 
 export default store;

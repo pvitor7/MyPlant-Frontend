@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
+import PersonalPlants from '../pages/PersonalPlants';
 
 function Routes() {
   return (
@@ -16,6 +17,8 @@ function Routes() {
       {/* <Route isPrivate path="/home">
         <Home />
       </Route>  */}
+
+      <Route path="/personalPlants" component={PersonalPlants} />
     </Switch>
   );
 }
