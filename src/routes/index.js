@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
-// import Route from './route';
 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -10,11 +8,8 @@ function Routes() {
   return (
     <Switch>
       <Route exact path="/" component={Signup} />
-
       <Route path="/login/" component={Login} />
-      {/* <Route isPrivate path="/home">
-        <Home />
-      </Route>  */}
+      <Route path="/home" component={Home} />
     </Switch>
   );
 }

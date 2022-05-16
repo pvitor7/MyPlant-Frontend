@@ -11,7 +11,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { signUpThunk } from "../../store/modules/user/thunks";
+import { signUpThunk } from "../../store/modules/userSignUp/thunks";
 
 
 function Signup() {
@@ -35,8 +35,8 @@ function Signup() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    dispatch(signUpThunk(data))
+  const onSubmit = (registerData) => {
+    // dispatch(signUpThunk(registerData))
   }
 
   return (
