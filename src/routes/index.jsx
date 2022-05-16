@@ -13,11 +13,11 @@ function Routes() {
     <Switch>
       <Route exact path="/" component={Signup} />
 
-      <Route path="/login/" component={Login} />
+      <Route path="/login" component={Login} />
       {/* <Route isPrivate path="/home">
         <Home />
       </Route>  */}
-
+      <Route path="/home" component={Home} />
       <Route path="/personalPlants" component={PersonalPlants} />
     </Switch>
   );

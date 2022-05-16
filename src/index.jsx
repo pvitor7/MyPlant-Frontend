@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-boolean-value */
+/*eslint-disable*/
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
