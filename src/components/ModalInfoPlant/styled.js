@@ -77,9 +77,10 @@ export const ModalInfo = styled.div`
       display: flex;
       background-color: #56b297;
       width: 60%;
-      height: 20px;
+      height: 22px;
       border-radius: 3px;
       justify-content: center;
+      align-items: center;
       color: white;
       font-size: 100%;
     }
@@ -95,16 +96,29 @@ export const ModalInfo = styled.div`
       margin-top: 10px;
     }
 
-    p{
-        height: 10px;
-        font-size: 18px;
-        margin: 10px;
+    p {
+      height: 10px;
+      font-size: 18px;
+      margin: 10px;
     }
 
     .p--info {
       height: 80%;
-      overflow: hidden;
-      text-overflow: ellipsis;
+
+      overflow: auto;
+      /* overflow: hidden;
+      text-overflow: ellipsis; */
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .p--info::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .p--info {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
 
     .div--scientificName {
