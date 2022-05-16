@@ -16,7 +16,7 @@ import { useHistory, Redirect } from "react-router-dom";
 
 function Login() {
   const [error, setError] = useState(false);
-  const history = useHistory()
+  // const history = useHistory()
 
   const schema = yup.object().shape({
     email: yup.string().email("Email inválido!").required("Campo obrigatório!"),
@@ -36,13 +36,14 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const route = () => {
-     history.push("/home");
-  }
+  //  const route = () => {
+  //     history.push("/home");
+  //  }
 
   const onSubmit = (data) => {
+    // route()
     dispatch(signInThunk(data));
-    route()
+     
   };
 
   return (
