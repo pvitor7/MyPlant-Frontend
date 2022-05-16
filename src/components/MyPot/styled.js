@@ -2,29 +2,6 @@
 
 import styled from "styled-components";
 
-export const TransitionCard = styled.div`
-  .transition--cardPlant-enter {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-
-  .transition--cardPlant-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 300ms, transform 300ms;
-  }
-
-  .transition--cardPlant-exit {
-    opacity: 1;
-  }
-
-  .transition--cardPlant-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 300ms, transform 300ms;
-  }
-`;
-
 const PlantCard = styled.div`
   @media (min-width: 320px) {
     display: flex;

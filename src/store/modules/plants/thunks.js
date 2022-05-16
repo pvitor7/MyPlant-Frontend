@@ -14,11 +14,10 @@ function getPrivatePlants(dispatch) {
       },
     })
     .then((res) => {
-      console.log(res.data.plants)
+      // console.log(res.data.plants)
       dispatch(personalPlants(res.data.plants));
     })
     .catch((error) => console.log(error));
-    console.log('peguei elas')
 }
 
 
@@ -34,7 +33,7 @@ export function deletePrivatePlants(id, dispatch){
   })
   .then((res) => {
     getPrivatePlants(dispatch)
-    console.log(res)
+    // console.log(res)
     })
   .catch((error) => console.log(error));
   console.log(`apaguei ela ${id}`)

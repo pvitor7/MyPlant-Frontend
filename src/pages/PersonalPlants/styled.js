@@ -101,7 +101,8 @@ export const MyGarden = styled.div`
       max-width: 250px;
       display: flex;
       justify-content: center;
-      margin: 25px 5px;
+      align-items: center;
+      margin: 10px;
       text-shadow: darkgray 1rem;
       text-shadow: 0.1em 0.1em 0.4em black;
       gap: 10px;
@@ -163,10 +164,10 @@ export const MyWish = styled.div`
       max-width: 250px;
       display: flex;
       justify-content: center;
-      margin: 25px 5px;
       text-shadow: darkgray 1rem;
       text-shadow: 0.1em 0.1em 0.4em black;
       gap: 10px;
+      margin: 10px;
     }
 
     .div--MyWish--list {
