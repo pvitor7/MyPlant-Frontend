@@ -14,7 +14,7 @@ function PersonalPlants() {
   const plantsUser = useSelector((state) => state.userPlants);
   
   const [GardenOpen, setGardenOpen] = useState(80);
-  const [wishOpen, setWishOpen] = useState(10);
+  const [wishOpen, setWishOpen] = useState(8);
   
   const [displayGardenList, setDisplayGardenList] = useState("flex");
   const [displayWishList, setWishList] = useState("none");
@@ -73,7 +73,7 @@ function PersonalPlants() {
           display={displayGardenList}
           onClick={() => {
             setGardenOpen(80);
-            setWishOpen(10);
+            setWishOpen(8);
             setDisplayGardenList("flex");
             setWishList("none");
           }}
@@ -105,7 +105,7 @@ function PersonalPlants() {
           open={wishOpen}
           display={displayWishList}
           onClick={() => {
-            setGardenOpen(10);
+            setGardenOpen(8);
             setWishOpen(80);
             setDisplayGardenList("none");
             setWishList("flex");
