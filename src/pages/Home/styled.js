@@ -28,8 +28,9 @@ export const Container = styled.div`
   }
 
   div > img {
-    width: 200px;
-    height: 120px;
+    min-width: 100px;
+    max-width: 200px;
+    object-fit: contain;
     align-self: center;
   }
 
@@ -79,7 +80,7 @@ export const Container = styled.div`
 
 export const Footer = styled.div`
   position: fixed;
-  top: 90%;
+  top: 91%;
   display: flex;
   justify-content: center;
   background-color: #FFFFFF;
@@ -169,7 +170,8 @@ export const ContainerPlants = styled.div`
   
   li {
     list-style: none;
-    
+    position: relative;
+
     width: 70%;
     height: 222px;
     display: flex;
@@ -193,8 +195,8 @@ export const ContainerPlants = styled.div`
 
   .buttonInfo {
     position: absolute;
-    margin-top: 5px;
-    right: 23%;
+    top: 6px;
+    right: 7px;
     border-radius: 100px;
     border: 1px solid #FFFFFF;
     width: 31px;
@@ -235,11 +237,6 @@ export const ContainerPlants = styled.div`
     li {
       width: 177px;
 
-    }
-
-    .buttonInfo {
-      top: 14%;
-      left: 32.5%;
     }
 
     .divButtons {

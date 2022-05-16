@@ -5,6 +5,7 @@ import Lupa from '../../assets/images/imagesHome/lupaHome.png'
 import ImgAddGarden from '../../assets/images/imagesHome/imgAddGarden.png'
 import ImgBuildGarden from '../../assets/images/imagesHome/imgBuildGarden.png'
 import ImgSeeComment from '../../assets/images/imagesHome/imgSeeComents.png'
+import {MdOutlineComment} from 'react-icons/md'
 
 function HomePage() {
   const [search, setSearch] = useState("");
@@ -40,10 +41,10 @@ function HomePage() {
 
             <ul className="divCards">
                 <li>
-                    <button className="buttonInfo">i</button>
-                    <img src="" alt="imgPlant" />
-                    <h4>Planta do Deserto</h4>
-                    <button className="buttonComment">Comentários</button>
+                  <button className="buttonInfo">i</button>
+                  <img src="" alt="imgPlant" />
+                  <h4>Planta do Deserto</h4>
+                  <button className="buttonComment"><MdOutlineComment/></button>
                 </li>
                 <li>
                     <button className="buttonInfo">i</button>
