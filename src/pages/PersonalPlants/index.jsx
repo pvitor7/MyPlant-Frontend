@@ -27,7 +27,7 @@ function PersonalPlants() {
     .then((resposta) => {
       console.log(resposta.data);
       localStorage.setItem(
-        "myPlantToken",
+        "token",
           JSON.stringify(resposta.data.accessToken)
         );
         localStorage.setItem(
