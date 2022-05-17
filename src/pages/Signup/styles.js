@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
 import SignupImageWomen from '../../assets/images/women.png';
 
