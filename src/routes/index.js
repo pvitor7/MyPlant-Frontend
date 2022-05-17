@@ -4,6 +4,7 @@ import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Equipe from "../pages/Equipe";
 import Homepage from "../pages/Home";
+import LandingPage from "../pages/Lading-Page";
 
 function Rotas() {
   return (
@@ -13,8 +14,12 @@ function Rotas() {
           <Equipe />
         </Route>
 
-        <Route exatc path="/">
+        <Route exatc path="/Homepage">
           <Homepage />
+        </Route>
+
+        <Route exatc path="/">
+          <LandingPage />
         </Route>
       </Switch>
     </div>
