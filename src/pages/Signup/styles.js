@@ -1,11 +1,11 @@
 import styled, { keyframes } from "styled-components";
-import SignupImageWomen from "../../assets/images/women.png";
+import imgMobile from "../../assets/images/imgMobile.png";
+import imgRegister from "../../assets/images/imgRegister.png";
 
 export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
-  
 `;
 
 const appearFromLeft = keyframes`
@@ -21,10 +21,11 @@ const appearFromLeft = keyframes`
 `;
 
 export const Background = styled.div`
-  @media (min-width: 1100px) {
+  @media (min-width: 1000px) {
     flex: 1;
-    background: url(${SignupImageWomen}) no-repeat center left, var(--white);
+    background: url(${imgRegister}) no-repeat center, var(--blue);
     background-size: contain;
+    width: 100%;
   }
 `;
 
@@ -34,7 +35,11 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
+
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
 `;
 
 export const AnimationContainer = styled.div`
@@ -52,39 +57,36 @@ export const AnimationContainer = styled.div`
 
   h3 {
     font-size: 18px;
-    color: var(--green)
+    color: var(--green);
   }
 
   h1 {
     font-size: 18px;
-    color: var(--green)
+    color: var(--green);
   }
 
   div {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+    justify-content:center;
     margin-top: 5px;
   }
 
   input {
-    margin-top: 8px;
     margin-right: 10px;
   }
 
   p {
-    margin-top: 10px;
 
     a {
       font-weight: bold;
       color: var(--green);
     }
-
   }
 
   span {
-    color: var(--negative)
+    color: var(--negative);
+    font-size: 12px;
   }
 `;
-
-

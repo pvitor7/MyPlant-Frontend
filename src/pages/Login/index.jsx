@@ -12,11 +12,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signInThunk } from "../../store/modules/userSignIn/thunks";
-import { useHistory, Redirect } from "react-router-dom";
 
 function Login() {
   const [error, setError] = useState(false);
-  // const history = useHistory()
 
   const schema = yup.object().shape({
     email: yup.string().email("Email inválido!").required("Campo obrigatório!"),
@@ -36,14 +34,8 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  //  const route = () => {
-  //     history.push("/home");
-  //  }
-
   const onSubmit = (data) => {
-    // route()
     dispatch(signInThunk(data));
-     
   };
 
   return (
@@ -52,7 +44,9 @@ function Login() {
         <AnimationContainer>
           <form onSubmit={handleSubmit(onSubmit)}>
             <section>
-              <img src={Logo} alt={Logo}></img>
+              <Link to="/">
+                <img src={Logo} alt={Logo}></img>
+              </Link>
               <h2>MY PLANT</h2>
               <h3>Busque, conheça, cuide!</h3>
             </section>
