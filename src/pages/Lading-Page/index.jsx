@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from "react";
+import React from "react";
 import Container from "./styled";
 import logo from "../../imgs/logo.png";
 import background from "../../imgs/background-LandingPage.png"
@@ -7,8 +7,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function LandingPage() {
   const redirecionamento = useHistory();
-  const [menuOpen, setMenuOpen] = useState(false);
-
+  
   function continuar() {
     redirecionamento.push("/Homepage");
   }
