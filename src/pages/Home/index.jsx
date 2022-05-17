@@ -1,22 +1,22 @@
 /*eslint-disable*/
-import { Container, Footer, ContainerPlants } from "./styled";
-import { useState, useEffect } from "react";
-import Lupa from '../../assets/images/imagesHome/lupaHome.png'
-import ImgAddGarden from '../../assets/images/imagesHome/imgAddGarden.png'
-import ImgBuildGarden from '../../assets/images/imagesHome/imgBuildGarden.png'
-import ImgSeeComment from '../../assets/images/imagesHome/imgSeeComents.png'
-import {MdOutlineComment} from 'react-icons/md'
+import React, { useState, useEffect } from 'react';
+import { MdOutlineComment } from 'react-icons/md';
+import { Container, Footer, ContainerPlants } from './styled';
+import Lupa from '../../assets/images/imagesHome/lupaHome.png';
+import ImgAddGarden from '../../assets/images/imagesHome/imgAddGarden.png';
+import ImgBuildGarden from '../../assets/images/imagesHome/imgBuildGarden.png';
+import ImgSeeComment from '../../assets/images/imagesHome/imgSeeComents.png';
 
 function HomePage() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    fetch("// https://my-plants-app.herokuapp.com/public_plants")
+    fetch('// https://my-plants-app.herokuapp.com/public_plants')
       .then((response) => response.json())
       .then((data) => setPlants(data));
-  },[]);
+  }, []);
 
   function searchInput() {
     const plantsFilter = plants.filter(({ name }) => {
@@ -28,43 +28,41 @@ function HomePage() {
 
   return (
     <>
-      
-        {search !== "" ? (
-          <ContainerPlants>
-            <div className="divButtons">
-              <button>Todas</button>
-              <button>Vermelhas</button>
-              <button>Amarelas</button>
-              <button>Azuis</button>
-              <button>Rosas</button>
-            </div>
 
-            <ul className="divCards">
-                <li>
-                  <button className="buttonInfo">i</button>
-                  <img src="" alt="imgPlant" />
-                  <h4>Planta do Deserto</h4>
-                  <button className="buttonComment"><MdOutlineComment/></button>
-                </li>
-                <li>
-                    <button className="buttonInfo">i</button>
-                    <img src="" alt="imgPlant" />
-                    <h4>Planta do Deserto</h4>
-                    <button className="buttonComment">Comentários</button>
-                </li>
-              {plants.map((a, index) => {
-                return (
-                  <li key={index}>
-                    <button className="buttonInfo">i</button>
-                    <img src={a.imgUrl} alt="imgPlant" />
-                    <h4>{a.name}</h4>
-                    <button className="buttonComment">Comentários</button>
-                  </li>
-                );
-              })}
-            </ul>
-          </ContainerPlants>
-        ) : (
+      {search !== '' ? (
+        <ContainerPlants>
+          <div className="divButtons">
+            <button>Todas</button>
+            <button>Vermelhas</button>
+            <button>Amarelas</button>
+            <button>Azuis</button>
+            <button>Rosas</button>
+          </div>
+
+          <ul className="divCards">
+            <li>
+              <button className="buttonInfo">i</button>
+              <img src="" alt="imgPlant" />
+              <h4>Planta do Deserto</h4>
+              <button className="buttonComment"><MdOutlineComment /></button>
+            </li>
+            <li>
+              <button className="buttonInfo">i</button>
+              <img src="" alt="imgPlant" />
+              <h4>Planta do Deserto</h4>
+              <button className="buttonComment">Comentários</button>
+            </li>
+            {plants.map((a, index) => (
+              <li key={index}>
+                <button className="buttonInfo">i</button>
+                <img src={a.imgUrl} alt="imgPlant" />
+                <h4>{a.name}</h4>
+                <button className="buttonComment">Comentários</button>
+              </li>
+            ))}
+          </ul>
+        </ContainerPlants>
+      ) : (
         <Container>
           <section>
             <div>
@@ -87,8 +85,8 @@ function HomePage() {
             </div>
           </section>
         </Container>
-        )}
-      
+      )}
+
       <Footer>
         <div>
           <input

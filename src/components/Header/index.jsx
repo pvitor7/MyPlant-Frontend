@@ -1,18 +1,47 @@
 /* eslint-disable */
+import React, { useState } from "react";
+import Container from "./styled";
+import logo from "../../imgs/logo.png"
+import icon from "../../imgs/menuzinho.png"
+import seta from "../../imgs/setinha.png"
+import Menu from "../Menu/index"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-import React from 'react';
-import './styled'
-import StyleHeader from './styled';
+function Header(){
 
-function Header () {
+    const redirecionamento = useHistory()
+    const [menuOpen, setMenuOpen] = useState(false)
+
+    function home(){
+        redirecionamento.push("/")
+    }
+
+    function menuAtivo(){
+
+        setMenuOpen(true)
+        
+    }
+
     return(
-        <StyleHeader>
-            <button className='header--menu'>Menu</button>
-            <img className='header--logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Suas_Plantas_Logo.svg/600px-Suas_Plantas_Logo.svg.png'/>
-            <span className='header--user'>User</span>
-        </StyleHeader>
+        <Container>
+            <header>
+        <div onClick={menuAtivo} className="icon-menu">
+            <img src = {icon} ></img>
+        <p>Menu</p>
+        </div>
+        {menuOpen === true ?(
+        <Menu sair = {setMenuOpen} />
+
+        ): null }
+
+         <img src={logo} onClick={home}/>
+         <div className="button-login">
+         <img src = {seta} ></img>
+          <button>Entrar</button>
+          </div>
+        </header>
+        </Container>
     )
 }
 
-export default Header;
-
+export default Header
