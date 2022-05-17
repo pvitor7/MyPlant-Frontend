@@ -12,5 +12,5 @@ export const signUpThunk = (registerData) => (dispatch) => {
       dispatch(signUp(response.data));
       toast.success("Conta criada com sucesso!");
     })
-    .catch((err) => toast.error("Ops! Ocorreu um erro."));
+    .catch((err) => toast.error("Ops! Esse email já existe."));
 };

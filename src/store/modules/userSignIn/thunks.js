@@ -1,27 +1,16 @@
-import api from "../../../services/api";
-import { signIn } from "./actions";
+import api from '../../../services/api';
+import { signIn } from './actions';
 
-import { toast } from "react-toastify";
-import { useHistory } from "react-router-dom";
-
+import { toast } from 'react-toastify';
 
 export const signInThunk = (userData) => (dispatch) => {
-//  const history = useHistory()
+  api
+    .post('/login/', userData)
+    .then((response) => {
+      localStorage.setItem('token', JSON.stringify(response.data.accessToken));
+      localStorage.setItem('user', JSON.stringify(response.data.user));
 
-    api
-      .post("/login/", userData)
-      .then((response) => {
-        console.log(response.data);
-        localStorage.setItem("token", JSON.stringify(response.data.accessToken));
-        localStorage.setItem("user", JSON.stringify(response.data.user));
-        console.log(response.data.user)
-
-
-        // history.push("/home")
-        dispatch(signIn(response.data.accessToken, response.data.user));
-
-
-      })
-      .catch((err) => toast.error("Email ou senha inválidos"));
-  
+      dispatch(signIn(response.data.accessToken, response.data.user));
+    })
+    .catch((err) => toast.error('Email ou senha inválidos'));
 };
