@@ -1,18 +1,20 @@
-import styled, { keyframes } from 'styled-components';
-import SignupImagePlants from '../../assets/images/plants.png';
+/* eslint-disable */
+import styled, { keyframes } from "styled-components";
+import imgMobile from "../../assets/images/imgMobile.png";
+import imgLogin from "../../assets/images/imgLogin.png";
 
 export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
-  
 `;
 
 export const Background = styled.div`
-  @media (min-width: 1100px) {
+  @media (min-width: 1000px) {
     flex: 1;
-    background: url(${SignupImagePlants}) no-repeat center right, var(--white);
+    background: url(${imgLogin}) no-repeat center, var(--green);
     background-size: contain;
+    width: 100%;
   }
 `;
 
@@ -22,7 +24,10 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 800px;
+
+  @media (min-width: 1000px) {
+    max-width: 50%;
+  }
 `;
 
 const appearFromRight = keyframes`
@@ -53,10 +58,10 @@ export const AnimationContainer = styled.div`
   section {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     justify-content: center;
 
-    margin-bottom: 70px;
+    margin-bottom: 30px;
   }
 
   h3 {
@@ -66,11 +71,11 @@ export const AnimationContainer = styled.div`
 
   h2 {
     font-size: 18px;
-    color: var(--blue)
+    color: var(--blue);
   }
 
-  h4{
-    font-family: 'Inter';
+  h4 {
+    font-family: "Inter";
     font-size: 1rem;
     font-weight: normal;
   }
@@ -78,7 +83,7 @@ export const AnimationContainer = styled.div`
   div {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     margin-top: 5px;
   }
 
@@ -89,16 +94,15 @@ export const AnimationContainer = styled.div`
 
   p {
     margin-top: 30px;
-
   }
 
   a {
-      font-weight: bold;
-      text-decoration:none;
-      color: var(--white)
-    }
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--white);
+  }
 
   span {
-    color: var(--negative)
+    color: var(--negative);
   }
 `;
