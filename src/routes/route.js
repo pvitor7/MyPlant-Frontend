@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useSelector } from 'react-redux';
 import { Redirect, Route as ReactDOMRoute } from 'react-router-dom';
 
