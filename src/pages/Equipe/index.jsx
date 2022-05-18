@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import Header from "../../components/Header";
 import Rick from "../../imgs/Henrique.jpg"
 import PauloV from "../../imgs/PauloVitor.jpg"
-
+import Bruna from "../../imgs/Bruna.jpeg"
 
 function Equipe(){
 
@@ -20,7 +20,7 @@ function Equipe(){
         nome: "Paulo David",
         cargo: "Tech Leader"
     },{
-        foto: "none",
+        foto: Bruna,
         nome: "Bruna Varela",
         cargo: "Product Owner"
     },{

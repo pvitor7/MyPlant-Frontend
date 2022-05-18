@@ -6,6 +6,7 @@ import Lupa from '../../assets/images/imagesHome/lupaHome.png';
 import ImgAddGarden from '../../assets/images/imagesHome/imgAddGarden.png';
 import ImgBuildGarden from '../../assets/images/imagesHome/imgBuildGarden.png';
 import ImgSeeComment from '../../assets/images/imagesHome/imgSeeComents.png';
+import Header from '../../components/Header';
 
 function HomePage() {
   const [search, setSearch] = useState('');
@@ -28,7 +29,7 @@ function HomePage() {
 
   return (
     <>
-
+      <Header />
       {search !== '' ? (
         <ContainerPlants>
           <div className="divButtons">

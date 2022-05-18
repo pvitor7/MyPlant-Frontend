@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Container from "./styled";
 import logo from "../../imgs/logo.png"
 import icon from "../../imgs/menuzinho.png"
-import seta from "../../imgs/setinha.png"
 import Menu from "../Menu/index"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { BiArrowToRight } from 'react-icons/bi';
 
 function Header(){
 
@@ -14,6 +14,9 @@ function Header(){
 
     function home(){
         redirecionamento.push("/")
+    }
+    function pages(destino){
+        redirecionamento.push(destino)
     }
 
     function menuAtivo(){
@@ -29,15 +32,11 @@ function Header(){
             <img src = {icon} ></img>
         <p>Menu</p>
         </div>
-        {menuOpen === true ?(
-        <Menu sair = {setMenuOpen} />
-
-        ): null }
-
+        <Menu abrir = {menuOpen} sair = {setMenuOpen} />
          <img src={logo} onClick={home}/>
          <div className="button-login">
-         <img src = {seta} ></img>
-          <button>Entrar</button>
+         
+          <button onClick={() => pages("/login")}><BiArrowToRight/>Entrar</button>
           </div>
         </header>
         </Container>

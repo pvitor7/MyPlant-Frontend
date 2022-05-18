@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Container from "./styled";
 import Header from "../../components/Header";
 
-function Equipe() {
+function Termos() {
   return (
     <>
       <Header />
@@ -44,7 +44,7 @@ function Equipe() {
             você tiver alguma dúvida sobre como lidamos com dados do usuário e
             informações pessoais, entre em contacto connosco.
           </p>
-          <h3>Compromisso do Usuário</h3>
+          <h3>Compromisso do Usuário:</h3>
           <p>
             O usuário se compromete a fazer uso adequado dos conteúdos e da
             informação que o My Plant oferece no site e com caráter enunciativo,
@@ -68,7 +68,7 @@ function Equipe() {
               anteriormente mencionados.
             </li>
           </ul>
-          <h3>Mais informações</h3>
+          <h3>Mais informações:</h3>
           <p>
             Esperemos que esteja esclarecido e, como mencionado anteriormente,
             se houver algo que você não tem certeza se precisa ou não,
@@ -76,8 +76,7 @@ function Equipe() {
             com um dos recursos que você usa em nosso site.
           </p>
           <p>
-            Esta política é efetiva a partir de <strong>May</strong>/
-            <strong>2022</strong>.
+            Esta política é efetiva a partir de May/2022.
           </p>
         </div>
       </Container>
@@ -85,4 +84,4 @@ function Equipe() {
   );
 }
 
-export default Equipe;
+export default Termos;

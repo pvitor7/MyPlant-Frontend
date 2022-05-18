@@ -1,6 +1,6 @@
 /* eslint-disable */
 import styled from "styled-components";
-
+import { BiArrowToRight } from 'react-icons/bi';
 const Container = styled.div`
   * {
     box-sizing: border-box;
@@ -9,7 +9,7 @@ const Container = styled.div`
     font-weight: 700;
     color: #56b297;
   }
-
+  
   .icon-menu{
     display: flex;
     align-items: center;
@@ -74,10 +74,13 @@ const Container = styled.div`
   }
   .button-login button{
     font-size: 0px;
+    
   }
-  .button-login img {
-    width: 100%;
+  
   }
-  }
-`;
+`
+
+
+
+;
 export default Container;

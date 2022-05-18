@@ -14,6 +14,17 @@ const Container = styled.div`
   .politicas{
       display: flex;
       flex-direction: column;
+      margin: 15px 30px;
+  }
+  .politicas h3{
+    color: #98b13a;
+  }
+  .politicas h2{
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .politicas li{
+    list-style: none;
   }
   
 `;
