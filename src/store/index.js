@@ -6,3 +6,4 @@ import rootReducer from './modules/rootReducer';
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
+const token = JSON.parse(localStorage.getItem('token'));

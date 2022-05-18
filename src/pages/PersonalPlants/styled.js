@@ -15,8 +15,8 @@ export const PersonalGarden = styled.div`
       display: flex;
       align-items: center;
       justify-items: center;
-      font-family: "Inter", sans;
-      font-weight: 1;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
       font-size: 25px;
       color: #b7d251;
       height: 50px;

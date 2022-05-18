@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import MyPot from "../../components/MyPot";
 import getPrivatePlants from "../../store/modules/plants/thunks";
-import { favouritePlantas, plantas } from "./data";
+import { wishList } from "../../store/modules/wishList/thunks";
+import { plantas } from "./data";
 import { MyGarden, PersonalGarden, MyWish } from "./styled";
 
 function PersonalPlants() {
@@ -14,35 +15,36 @@ function PersonalPlants() {
 
   const dispatch = useDispatch();
   const plantsUser = useSelector((state) => state.userPlants);
+  const wishUserList = useSelector((state) => state.userWish);
   
   const [GardenOpen, setGardenOpen] = useState(80);
-  const [wishOpen, setWishOpen] = useState(8);
+  const [wishOpen, setWishOpen] = useState(12);
   
   const [displayGardenList, setDisplayGardenList] = useState("flex");
   const [displayWishList, setWishList] = useState("none");
 
-  function loginProvisorio() {
-    const data = { email: "kenzinho@mail.com", password: "123456" };
+  // function loginProvisorio() {
+  //   const data = { email: "kenzinho@mail.com", password: "123456" };
     
-    axios
-    .post("https://my-plants-app.herokuapp.com/login", data)
-    .then((resposta) => {
-      console.log(resposta.data);
-      localStorage.setItem(
-        "token",
-          JSON.stringify(resposta.data.accessToken)
-        );
-        localStorage.setItem(
-          "myPlantId",
-          JSON.stringify(resposta.data.user.id)
-          );
-      })
-  }
+  //   axios
+  //   .post("https://my-plants-app.herokuapp.com/login", data)
+  //   .then((resposta) => {
+  //     console.log(resposta.data);
+  //     localStorage.setItem(
+  //       "token",
+  //         JSON.stringify(resposta.data.accessToken)
+  //       );
+  //       localStorage.setItem(
+  //         "myPlantId",
+  //         JSON.stringify(resposta.data.user.id)
+  //         );
+  //     })
+  // }
 
   useEffect(() => {
 
-    const token = JSON.parse(localStorage.getItem("myPlantToken"));
-    const minhasPlantas = [...plantas]
+    // const token = JSON.parse(localStorage.getItem("token"));
+    // const minhasPlantas = [...plantas]
     
     //Função para cadastrar plantas na API, elas estão sumindo
 
@@ -57,11 +59,13 @@ function PersonalPlants() {
     //     .then((res) => console.log(res))
     //     .catch((err) => console.log(err))
     // })
+
     loginProvisorio();
   }, []);
 
   useEffect(() => {
     getPrivatePlants(dispatch);
+    wishList(dispatch);
   }, []);
   
    
@@ -76,7 +80,7 @@ function PersonalPlants() {
           display={displayGardenList}
           onClick={() => {
             setGardenOpen(80);
-            setWishOpen(8);
+            setWishOpen(12);
             setDisplayGardenList("flex");
             setWishList("none");
           }}
@@ -85,7 +89,6 @@ function PersonalPlants() {
             Seu jardim
             {GardenOpen < wishOpen && (
               <button
-                onClick={() => console.log("Lista mais")}
                 className="button--MyGarden"
               >
                 +
@@ -108,19 +111,16 @@ function PersonalPlants() {
           open={wishOpen}
           display={displayWishList}
           onClick={() => {
-            setGardenOpen(8);
+            setGardenOpen(12);
             setWishOpen(80);
             setDisplayGardenList("none");
             setWishList("flex");
           }}
         >
           <h4 className="MyWish--h4">
-            Lista de Desejos
+            Favoritos
             {wishOpen < GardenOpen && (
               <button
-                onClick={() => {
-                  console.log("Lista mais");
-                }}
                 className="button--MyWish"
               >
                 +
@@ -128,7 +128,9 @@ function PersonalPlants() {
             )}
           </h4>
           <div className="div--MyWish--list">
-            {favouritePlantas.map((plant, index) => {
+            {
+            wishUserList.length > 0 &&
+            wishUserList.map((plant, index) => {
               return <MyPot dispatch={dispatch} addMyWish plant={plant} key={index} />;
             })}
           </div>
