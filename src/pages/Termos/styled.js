@@ -11,10 +11,15 @@ const Container = styled.div`
     color: #56b297;
     border-radius: 4px;
   }
+  h1{
+    margin: 20px 0;
+    text-align: center;
+    padding:0 10%;
+  }
   .politicas{
       display: flex;
       flex-direction: column;
-      margin: 15px 30px;
+      padding:0 10%;
   }
   .politicas h3{
     color: #98b13a;

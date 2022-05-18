@@ -5,7 +5,7 @@ import logo from "../../imgs/logo.png"
 import icon from "../../imgs/menuzinho.png"
 import Menu from "../Menu/index"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { BiArrowToRight } from 'react-icons/bi';
+import { CgLogIn } from 'react-icons/cg';
 
 function Header(){
 
@@ -33,10 +33,13 @@ function Header(){
         <p>Menu</p>
         </div>
         <Menu abrir = {menuOpen} sair = {setMenuOpen} />
+         <div className="figure-header">
          <img src={logo} onClick={home}/>
+
+         </div>
          <div className="button-login">
          
-          <button onClick={() => pages("/login")}><BiArrowToRight/>Entrar</button>
+          <button onClick={() => pages("/login")}><CgLogIn className="icone"/>Entrar</button>
           </div>
         </header>
         </Container>

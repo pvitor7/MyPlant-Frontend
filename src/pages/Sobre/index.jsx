@@ -1,7 +1,6 @@
-/* eslint-disable */
-import React, { useState } from "react";
-import Container from "./styled";
-import Header from "../../components/Header";
+import React from 'react';
+import Container from './styled';
+import Header from '../../components/Header';
 
 function Detalhes() {
   return (

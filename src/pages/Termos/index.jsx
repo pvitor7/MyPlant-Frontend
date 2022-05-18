@@ -8,8 +8,8 @@ function Termos() {
     <>
       <Header />
       <Container>
+          <h1>Política Privacidade</h1>
         <div className="politicas">
-          <h2>Política Privacidade</h2>
           <p>
             A sua privacidade é importante para nós. É política do My Plant
             respeitar a sua privacidade em relação a qualquer informação sua que

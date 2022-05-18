@@ -26,7 +26,7 @@ const Container = styled.div`
   .button-login{
     display: flex;
     align-items: center;
-    max-height: 30px;
+    max-height: 60px;
     cursor: pointer;
   }
   .button-login img{
@@ -55,6 +55,7 @@ const Container = styled.div`
   header img {
     max-width: 100px;
     max-height: 15vh;
+    
     cursor: pointer;
   }
   header button {
@@ -62,7 +63,16 @@ const Container = styled.div`
       background-color: transparent;
       font-weight: 400;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-left: 20px;
   }
+
+  .icone{
+    font-size: 30px;
+  }
+
 
   @media (max-width:700px){
     .icon-menu{
@@ -73,8 +83,11 @@ const Container = styled.div`
     height: 60%;
   }
   .button-login button{
+    margin-left: -10px;
     font-size: 0px;
-    
+  }
+  .icone{
+    font-size: 30px;
   }
   
   }

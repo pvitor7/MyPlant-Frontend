@@ -1,5 +1,4 @@
-/* eslint-disable */
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
  position: absolute;
@@ -52,7 +51,8 @@ const Container = styled.div`
     flex-direction: column;
     padding-left: 20px;
     box-shadow: 0px 6px 8px 2px rgba(0,0,0,0.47);
-    max-height: 100%;
+    overflow-y: auto;
+    max-height: 470px;
     background-color: white;
     margin-top: 5px;
   }
@@ -81,14 +81,14 @@ const Container = styled.div`
   
   .texto-2{
     opacity: 0;
-
   }
 
   main div {
-    margin: 0 auto;
-    font-size: 18px;
-    max-height: 41px;
-    max-width: 50%;
+    text-align: center;
+    margin: 0 60px;
+    font-size: 16px;
+    max-height: 30px;
+    max-width: 45%;
   }
 
   main div button {
@@ -98,6 +98,7 @@ const Container = styled.div`
     height: 24px;
     cursor: pointer;
     color: #98b13a;
+    margin-left: 5px;
   }
   .buttonreturn {
     border: none;
@@ -112,10 +113,14 @@ const Container = styled.div`
     height: 23px;
   }
 
-  @media (max-width:500px){
+  @media (max-width:1350px){
 
     header p {
     font-size: 18px;
+  }
+
+  main{
+    max-height: 400px;
   }
 
   .buttonreturn{
@@ -144,6 +149,5 @@ const Container = styled.div`
     }
   }
 `;
-
 
 export default Container;

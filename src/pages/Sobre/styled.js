@@ -16,9 +16,12 @@ const Container = styled.div`
     text-align: center;
   }
   .topico-1{
-    margin: 0 30px;
+    
     display: flex;
     flex-direction: column;
+    padding: 0 10%;
+    padding-right: 12.5%;
+    
   }
   .topico-1 h2{
     color: #98b13a;
