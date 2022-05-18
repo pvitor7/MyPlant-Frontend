@@ -1,20 +1,21 @@
-/* eslint-disable */
-import "./styled";
-import { BiFile, BiHeart, BiPencil } from "react-icons/bi";
-import PlantCard from "./styled";
+// /* eslint-disable */
+import { BiFile, BiHeart, BiPencil } from 'react-icons/bi';
+import React, { useState } from 'react';
+import PlantCard from './styled';
 import {
   addPrivatePlants,
   deletePrivatePlants,
   editMyPlant,
-} from "../../store/modules/plants/thunks";
-import ModalInfoPlant from "../ModalInfoPlant";
-import { useState } from "react";
-import { deleteWish, myWishAdd } from "../../store/modules/wishList/thunks";
+} from '../../store/modules/plants/thunks';
+import ModalInfoPlant from '../ModalInfoPlant';
+import { deleteWish, myWishAdd } from '../../store/modules/wishList/thunks';
 
-function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
+function MyPot({
+  dispatch, plant, myChild = false, addMyWish = false,
+}) {
   const [modal, setModal] = useState(false);
   const [infoPlant, setInfoPlant] = useState(true);
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = JSON.parse(localStorage.getItem('token'));
 
   return (
     <PlantCard idPlant={plant.id}>
@@ -29,11 +30,16 @@ function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
         <img className="img--PlantImage" src={plant.imgUrl} />
       </div>
       <h3 className="h3--PlantTitle">{plant.name}</h3>
-      <p className="p--scientificName">({plant.sci_name})</p>
+      <p className="p--scientificName">
+        (
+        {plant.sci_name}
+        )
+      </p>
       <div className="div--CardButtons">
         {
         token && myChild && (
           <button
+            type="button"
             className="button--BiPencil"
             onClick={() => {
               setInfoPlant(true);
@@ -42,10 +48,12 @@ function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
           >
             <BiPencil />
           </button>
-        )}
+        )
+}
 
         {myChild && (
           <button
+            type="button"
             onClick={() => {
               setInfoPlant(false);
               setModal(true);
@@ -61,7 +69,7 @@ function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
             onClick={() => {
               console.log("informações do card");
               myWishAdd(dispatch, plant);
-              
+
             }}
             className="button--Pot"
           >
@@ -71,6 +79,7 @@ function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
 
         {addMyWish && (
           <button
+            type="button"
             onClick={() => {
               addPrivatePlants(dispatch, plant);
             }}
@@ -81,6 +90,7 @@ function MyPot({ dispatch, plant, myChild = false, addMyWish = false }) {
         )}
 
         <button
+          type="button"
           className="button--Pot"
           onClick={() => {
             addMyWish

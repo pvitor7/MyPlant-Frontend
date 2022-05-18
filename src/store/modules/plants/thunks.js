@@ -1,10 +1,10 @@
 /* eslint-disable */
-import api from "../../../services/api";
-import personalPlants from "./actions";
+import api from '../../../services/api';
+import personalPlants from './actions';
 
-//Pegar plantas do usuário da API
+// Pegar plantas do usuário da API
 function getPrivatePlants(dispatch) {
-  const {id} = JSON.parse(localStorage.getItem("user"));
+  const { id } = JSON.parse(localStorage.getItem('user'));
 
   api
     .get(`/users/${id}?_embed=plants`)
@@ -14,9 +14,8 @@ function getPrivatePlants(dispatch) {
     .catch((error) => console.log(error));
 }
 
-//Adicionar Plantas a Personal plants
+// Adicionar Plantas a Personal plants
 export function addPrivatePlants(dispatch, plant) {
-
   api
     .post('/plants', plant)
     .then((res) => {
@@ -27,10 +26,8 @@ export function addPrivatePlants(dispatch, plant) {
   getPrivatePlants(dispatch);
 }
 
-//Editar planta do usuário pelo modal
+// Editar planta do usuário pelo modal
 export function editMyPlant(plant, dispatch) {
-
-
   api
     .patch(`/plants/${plant.id}`, plant)
     .then((res) => {
@@ -41,9 +38,8 @@ export function editMyPlant(plant, dispatch) {
     .catch((err) => console.log(err));
 }
 
-//Deletar planta do usuário da API
+// Deletar planta do usuário da API
 export function deletePrivatePlants(id, dispatch) {
-
   api
     .delete(`/plants/${id}`)
     .then((res) => {

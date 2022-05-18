@@ -16,7 +16,6 @@ import Button from '../../components/Button';
 import signInThunk from '../../store/modules/userSignIn/thunks';
 
 function Login() {
-
   const { token } = useSelector((state) => state.userSignIn);
 
   const [error, setError] = useState(false);
@@ -45,7 +44,7 @@ function Login() {
 
   return (
     <Container>
-      {token && <Redirect to='/personalPlants'/>}
+      {token && <Redirect to="/personalPlants" />}
       <Content>
         <AnimationContainer>
           <form onSubmit={handleSubmit(onSubmit)}>

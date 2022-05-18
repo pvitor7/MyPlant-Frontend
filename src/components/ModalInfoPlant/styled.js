@@ -1,8 +1,6 @@
-/* eslint-disable */
+import styled from 'styled-components';
 
-import styled from "styled-components";
-
-export const ModalInfo = styled.div`
+const ModalInfo = styled.div`
   @media (min-width: 320px) {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
@@ -226,3 +224,5 @@ export const ModalInfo = styled.div`
     }
   }
 `;
+
+export default ModalInfo;

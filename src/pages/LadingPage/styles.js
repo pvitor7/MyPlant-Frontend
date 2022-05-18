@@ -1,6 +1,6 @@
 /* eslint-disable */
-import styled, { keyframes } from "styled-components";
-import imgWoman from "../../assets/images/imgWoman.png";
+import styled, { keyframes } from 'styled-components';
+import imgWoman from '../../assets/images/imgWoman.png';
 
 export const Container = styled.div`
   height: 100vh;

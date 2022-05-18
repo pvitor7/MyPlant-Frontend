@@ -1,7 +1,7 @@
 /* eslint-disable */
 import PERSONAL_PLANTS, { ADD_PLANT } from './actionTypes';
 
-function dataPlantsReducer(state = {},action) {
+function dataPlantsReducer(state = {}, action) {
   switch (action.type) {
     case PERSONAL_PLANTS:
       // console.log(action.myPlants)

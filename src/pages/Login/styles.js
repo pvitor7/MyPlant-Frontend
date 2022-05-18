@@ -1,7 +1,7 @@
 /* eslint-disable */
-import styled, { keyframes } from "styled-components";
-import imgMobile from "../../assets/images/imgMobile.png";
-import imgLogin from "../../assets/images/imgLogin.png";
+import styled, { keyframes } from 'styled-components';
+import imgMobile from '../../assets/images/imgMobile.png';
+import imgLogin from '../../assets/images/imgLogin.png';
 
 export const Container = styled.div`
   height: 100vh;

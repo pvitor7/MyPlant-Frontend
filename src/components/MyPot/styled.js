@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const PlantCard = styled.div`
   @media (min-width: 320px) {
@@ -94,4 +94,3 @@ const PlantCard = styled.div`
 `;
 
 export default PlantCard;
-

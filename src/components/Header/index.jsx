@@ -1,47 +1,45 @@
 /* eslint-disable */
-import React, { useState } from "react";
-import Container from "./styled";
-import logo from "../../imgs/logo.png"
-import icon from "../../imgs/menuzinho.png"
-import seta from "../../imgs/setinha.png"
-import Menu from "../Menu/index"
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function Header(){
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Container from './styled';
+import logo from '../../imgs/logo.png';
+import icon from '../../imgs/menuzinho.png';
+import seta from '../../imgs/setinha.png';
+import Menu from '../Menu/index';
 
-    const redirecionamento = useHistory()
-    const [menuOpen, setMenuOpen] = useState(false)
+function Header() {
+  const redirecionamento = useHistory();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    function home(){
-        redirecionamento.push("/")
-    }
+  function home() {
+    redirecionamento.push('/');
+  }
 
-    function menuAtivo(){
+  function menuAtivo() {
+    setMenuOpen(true);
+  }
 
-        setMenuOpen(true)
-        
-    }
-
-    return(
-        <Container>
-            <header>
+  return (
+    <Container>
+      <header>
         <div onClick={menuAtivo} className="icon-menu">
-            <img src = {icon} ></img>
-        <p>Menu</p>
+          <img src={icon} alt="icone" />
+          <p>Menu</p>
         </div>
-        {menuOpen === true ?(
-        <Menu sair = {setMenuOpen} />
+        {menuOpen === true ? (
+          <Menu sair={setMenuOpen} />
 
-        ): null }
+        ) : null }
 
-         <img src={logo} onClick={home}/>
-         <div className="button-login">
-         <img src = {seta} ></img>
-          <button>Entrar</button>
-          </div>
-        </header>
-        </Container>
-    )
+        <img src={logo} alt="logo" onClick={home} />
+        <div className="button-login">
+          <img src={seta} alt="arrow icon" />
+          <button type="button">Entrar</button>
+        </div>
+      </header>
+    </Container>
+  );
 }
 
-export default Header
+export default Header;

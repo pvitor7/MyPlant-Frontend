@@ -1,10 +1,12 @@
 /* eslint-disable */
 
-import Logo from "../../assets/images/logoDesktop.png";
-import { AnimationContainer, Background, Container, Content } from "./styles";
 import { BiArrowToRight } from 'react-icons/bi';
-import { Link } from "react-router-dom";
-import Button from "../../components/Button";
+import { Link } from 'react-router-dom';
+import Logo from '../../assets/images/logoDesktop.png';
+import {
+  AnimationContainer, Background, Container, Content,
+} from './styles';
+import Button from '../../components/Button';
 
 function Login() {
   return (
@@ -16,9 +18,12 @@ function Login() {
             <h2>MY PLANT</h2>
           </section>
 
-          <h3>Busque por suas plantas,
-             conheça mais sobre elas.
-              Cuide do seu jardim virtual!</h3>
+          <h3>
+            Busque por suas plantas,
+            conheça mais sobre elas.
+            Cuide do seu jardim virtual!
+
+          </h3>
 
           <Link to="/home">
             <Button>Iniciar</Button>
@@ -27,7 +32,8 @@ function Login() {
             <Button GreenSchema>Cadastrar</Button>
           </Link>
           <div>
-            <p>Já possui uma conta? </p>{" "}
+            <p>Já possui uma conta? </p>
+            {' '}
             <Link to="/login">
               <span>Entrar</span>
             </Link>

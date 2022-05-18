@@ -3,24 +3,22 @@ import { FiUser, FiMail, FiLock } from 'react-icons/fi';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, Redirect } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   AnimationContainer, Background, Container, Content,
 } from './styles';
-import  signUpThunk from '../../store/modules/userSignUp/thunks';
+import signUpThunk from '../../store/modules/userSignUp/thunks';
 import Logo from '../../assets/images/logoDesktop.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { Redirect } from 'react-router-dom';
 
 function Signup() {
   const [error, setError] = useState(false);
   const history = useHistory();
 
   const { user } = useSelector((state) => state.userSignUp);
-
 
   const schema = yup.object().shape({
     name: yup.string().required('Campo obrigatório!'),
@@ -56,7 +54,7 @@ function Signup() {
 
   return (
     <Container>
-      {Object.keys(user).length !== 0 && <Redirect to='/login'/>}
+      {Object.keys(user).length !== 0 && <Redirect to="/login" />}
       <Background />
       <Content>
         <AnimationContainer>

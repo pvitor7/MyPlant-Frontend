@@ -1,1 +1,3 @@
-export const USER_SIGNIN = '@user/SIGNIN';
+const USER_SIGNIN = '@user/SIGNIN';
+
+export default USER_SIGNIN;

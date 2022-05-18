@@ -124,7 +124,7 @@ export const Footer = styled.div`
       }
   }
   
-`
+`;
 
 export const ContainerPlants = styled.div`
   display: flex;
@@ -253,6 +253,4 @@ export const ContainerPlants = styled.div`
     height: 80vh;
 
   }
-`
-
-
+`;
