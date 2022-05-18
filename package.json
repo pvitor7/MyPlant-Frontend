@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@hookform/resolvers": "^2.8.10",
     "@mui/material": "^5.7.0",
     "@mui/styled-engine-sc": "^5.7.0",
     "@testing-library/jest-dom": "^5.16.4",
@@ -17,7 +18,7 @@
     "react-hook-form": "^7.31.0",
     "react-icons": "^4.3.1",
     "react-redux": "^8.0.1",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "5",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.1",
     "react-transition-group": "^4.4.2",

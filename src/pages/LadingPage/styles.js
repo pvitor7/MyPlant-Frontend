@@ -1,7 +1,6 @@
 /* eslint-disable */
 import styled, { keyframes } from "styled-components";
-import imgMobile from "../../assets/images/imgMobile.png";
-import imgLogin from "../../assets/images/imgLogin.png";
+import imgWoman from "../../assets/images/imgWoman.png";
 
 export const Container = styled.div`
   height: 100vh;
@@ -12,7 +11,7 @@ export const Container = styled.div`
 export const Background = styled.div`
   @media (min-width: 1000px) {
     flex: 1;
-    background: url(${imgLogin}) no-repeat center, var(--green);
+    background: url(${imgWoman}) no-repeat center;
     background-size: contain;
     width: 100%;
   }
@@ -49,12 +48,6 @@ export const AnimationContainer = styled.div`
   justify-content: center;
   animation: ${appearFromRight} 1s;
 
-  form {
-    margin: 80px 0;
-    width: 340px;
-    text-align: center;
-  }
-
   section {
     display: flex;
     flex-direction: column;
@@ -87,22 +80,24 @@ export const AnimationContainer = styled.div`
     margin-top: 5px;
   }
 
-  input {
-    margin-top: 8px;
-    margin-right: 10px;
-  }
-
   p {
     margin-top: 30px;
   }
 
   a {
-    font-weight: bold;
+    font-weight: normal;
     text-decoration: none;
     color: var(--white);
   }
 
+  button {
+    margin-top: 10px;
+    width: 250px;
+  }
+
   span {
-    color: var(--negative);
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--green);
   }
 `;

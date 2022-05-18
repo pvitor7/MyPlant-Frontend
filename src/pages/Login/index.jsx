@@ -5,31 +5,26 @@ import { FiMail, FiLock } from 'react-icons/fi';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { signUpThunk } from '../../store/modules/user/thunks';
-
 import {
-  Container, Background, Content, AnimationContainer,
+  AnimationContainer, Background, Container, Content,
 } from './styles';
-
 import Logo from '../../assets/images/logoDesktop.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import signInThunk from '../../store/modules/userSignIn/thunks';
 
 function Login() {
   const [error, setError] = useState(false);
 
   const schema = yup.object().shape({
-    name: yup.string().required('Campo obrigatório!'),
     email: yup.string().email('Email inválido!').required('Campo obrigatório!'),
-    password: yup.string().min(8, 'Mínimo de 8 dígitos').required('Campo obrigatório!'),
-    passwordConfirm: yup.string().oneOf([yup.ref('password')], 'Senhas diferentes').required('Campo obrigatório!'),
-    terms: yup.boolean().isTrue('Você não aceitou os termos de uso!'),
+    password: yup
+      .string()
+      .min(8, 'Mínimo de 8 dígitos')
+      .required('Campo obrigatório!'),
   });
-
-  const dispatch = useDispatch();
 
   const {
     register,
@@ -39,8 +34,10 @@ function Login() {
     resolver: yupResolver(schema),
   });
 
+  const dispatch = useDispatch();
+
   const onSubmit = (data) => {
-    dispatch(signUpThunk(data));
+    dispatch(signInThunk(data));
   };
 
   return (
@@ -49,7 +46,9 @@ function Login() {
         <AnimationContainer>
           <form onSubmit={handleSubmit(onSubmit)}>
             <section>
-              <img src={Logo} alt={Logo} />
+              <Link to="/">
+                <img src={Logo} alt={Logo} />
+              </Link>
               <h2>MY PLANT</h2>
               <h3>Busque, conheça, cuide!</h3>
             </section>
@@ -70,10 +69,10 @@ function Login() {
               error={errors.password?.message}
             />
             <Button type="submit">Entrar</Button>
-            <p>
-              Ainda não possui conta?
-            </p>
-            <Link to="/"><Button GreenSchema>Cadastrar</Button></Link>
+            <p>Ainda não possui conta?</p>
+            <Link to="/">
+              <Button GreenSchema>Cadastrar</Button>
+            </Link>
           </form>
         </AnimationContainer>
       </Content>
