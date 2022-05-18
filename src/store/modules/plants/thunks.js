@@ -1,19 +1,13 @@
 /* eslint-disable */
-import axios from "axios";
 import api from "../../../services/api";
 import personalPlants from "./actions";
 
 //Pegar plantas do usuário da API
 function getPrivatePlants(dispatch) {
-  const id = JSON.parse(localStorage.getItem("myPlantId"));
-  const token = JSON.parse(localStorage.getItem("token"));
+  const {id} = JSON.parse(localStorage.getItem("user"));
 
-  axios
-    .get(`https://my-plants-app.herokuapp.com/users/${id}?_embed=plants`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+  api
+    .get(`/users/${id}?_embed=plants`)
     .then((res) => {
       dispatch(personalPlants(res.data.plants));
     })
@@ -22,14 +16,9 @@ function getPrivatePlants(dispatch) {
 
 //Adicionar Plantas a Personal plants
 export function addPrivatePlants(dispatch, plant) {
-  const token = JSON.parse(localStorage.getItem("token"));
 
-  axios
-    .post(`https://my-plants-app.herokuapp.com/plants`, plant, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+  api
+    .post('/plants', plant)
     .then((res) => {
       console.log(res);
       dispatch(addMyGarden(plant));
@@ -41,7 +30,6 @@ export function addPrivatePlants(dispatch, plant) {
 //Editar planta do usuário pelo modal
 export function editMyPlant(plant, dispatch) {
 
-  const token = JSON.parse(localStorage.getItem("token"));
 
   api
     .patch(`/plants/${plant.id}`, plant)
@@ -55,14 +43,9 @@ export function editMyPlant(plant, dispatch) {
 
 //Deletar planta do usuário da API
 export function deletePrivatePlants(id, dispatch) {
-  const token = JSON.parse(localStorage.getItem("token"));
 
-  axios
-    .delete(`https://my-plants-app.herokuapp.com/plants/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
+  api
+    .delete(`/plants/${id}`)
     .then((res) => {
       getPrivatePlants(dispatch);
     })

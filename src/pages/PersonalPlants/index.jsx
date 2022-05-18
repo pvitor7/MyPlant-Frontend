@@ -41,7 +41,7 @@ function PersonalPlants() {
   //     })
   // }
 
-  useEffect(() => {
+  // useEffect(() => {
 
     // const token = JSON.parse(localStorage.getItem("token"));
     // const minhasPlantas = [...plantas]
@@ -60,8 +60,8 @@ function PersonalPlants() {
     //     .catch((err) => console.log(err))
     // })
 
-    loginProvisorio();
-  }, []);
+  //   loginProvisorio();
+  // }, []);
 
   useEffect(() => {
     getPrivatePlants(dispatch);
@@ -129,8 +129,8 @@ function PersonalPlants() {
           </h4>
           <div className="div--MyWish--list">
             {
-            wishUserList.length > 0 &&
-            wishUserList.map((plant, index) => {
+            wishUserList?.length > 0 &&
+            wishUserList?.map((plant, index) => {
               return <MyPot dispatch={dispatch} addMyWish plant={plant} key={index} />;
             })}
           </div>

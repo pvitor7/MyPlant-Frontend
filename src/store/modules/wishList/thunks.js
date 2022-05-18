@@ -6,14 +6,14 @@ import personalWish, { deletelWish } from "./actions";
 //Postar favoritos na API
 
 export const wishList = (dispatch) => {
-  console.log("get wishList");
-  api
-    .get("/wish_list")
-    .then((res) => {
-      console.log(res.data);
-      dispatch(personalWish(res.data));
-    })
-    .catch((err) => console.log(err));
+  // console.log("get wishList");
+  // api
+  //   .get("/wish_list")
+  //   .then((res) => {
+  //     console.log(res.data);
+  //     dispatch(personalWish(res.data));
+  //   })
+  //   .catch((err) => console.log(err));
 };
 
 export const myWishAdd = (dispatch, plant) => {
