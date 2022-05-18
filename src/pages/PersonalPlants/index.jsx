@@ -2,13 +2,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from 'react-router-dom';
 import MyPot from "../../components/MyPot";
 import getPrivatePlants from "../../store/modules/plants/thunks";
 import { favouritePlantas, plantas } from "./data";
 import { MyGarden, PersonalGarden, MyWish } from "./styled";
 
 function PersonalPlants() {
-  const user = "Maria";
+
+  const { token, user } = useSelector((state) => state.userSignIn);
 
   const dispatch = useDispatch();
   const plantsUser = useSelector((state) => state.userPlants);
@@ -65,7 +67,9 @@ function PersonalPlants() {
    
   return (
     <PersonalGarden>
-      <h2>Boas vindas, {user}!</h2>
+      {!token && <Redirect to='/signup'/>}
+
+      <h2>Boas vindas, {user.name}!</h2>
       <div className="div--MyGardens--area">
         <MyGarden
           open={GardenOpen}

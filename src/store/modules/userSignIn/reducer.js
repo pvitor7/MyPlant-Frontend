@@ -1,9 +1,12 @@
-import { USER_SIGNIN } from "./actionTypes";
-const token = localStorage.getItem("token") || "";
+/* eslint-disable*/
+import { USER_SIGNIN } from './actionTypes';
+
+const token = localStorage.getItem('token') || '';
+const user = localStorage.getItem('user') || '';
 
 const defaultState = {
   token,
-  user: {},
+  user,
 };
 
 const signInReducer = (state = defaultState, action) => {

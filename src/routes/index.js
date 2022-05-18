@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import { Switch } from 'react-router-dom';
-import Route from './route';
+import { Switch, Route } from 'react-router-dom';
+// import Route from './route';
 
 import PersonalPlants from '../pages/PersonalPlants';
 import LadingPage from '../pages/LadingPage';

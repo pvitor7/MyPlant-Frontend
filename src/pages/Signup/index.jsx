@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   AnimationContainer, Background, Container, Content,
 } from './styles';
@@ -13,10 +13,14 @@ import  signUpThunk from '../../store/modules/userSignUp/thunks';
 import Logo from '../../assets/images/logoDesktop.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import { Redirect } from 'react-router-dom';
 
 function Signup() {
   const [error, setError] = useState(false);
   const history = useHistory();
+
+  const { user } = useSelector((state) => state.userSignUp);
+
 
   const schema = yup.object().shape({
     name: yup.string().required('Campo obrigatório!'),
@@ -46,12 +50,13 @@ function Signup() {
     dispatch(signUpThunk(registerData));
   };
 
-  const route = () => {
-    history.push('/login');
-  };
+  // const route = () => {
+  //   history.push('/login');
+  // };
 
   return (
     <Container>
+      {Object.keys(user).length !== 0 && <Redirect to='/login'/>}
       <Background />
       <Content>
         <AnimationContainer>
@@ -104,7 +109,7 @@ function Signup() {
             <span>{errors.terms?.message}</span>
             <Button type="submit">Cadastrar</Button>
             <p>
-              Já tem uma conta?
+              Já possui uma conta?
               <Link to="/login">Entrar</Link>
             </p>
           </form>

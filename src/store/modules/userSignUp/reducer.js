@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import { USER_SIGNUP } from "./actionTypes";
 
 const defaultState = {

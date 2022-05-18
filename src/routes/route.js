@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Redirect, Route as ReactDOMRoute } from 'react-router-dom';
 
-function Route({ isPrivate = false, component: Component, ...rest }) {
+function Route({ isPrivate = false, Component: component, ...rest }) {
   const { token } = useSelector((state) => state.userSignIn);
 
   // true e true = ok

@@ -5,8 +5,8 @@ import { FiMail, FiLock } from 'react-icons/fi';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   AnimationContainer, Background, Container, Content,
 } from './styles';
@@ -16,6 +16,9 @@ import Button from '../../components/Button';
 import signInThunk from '../../store/modules/userSignIn/thunks';
 
 function Login() {
+
+  const { token } = useSelector((state) => state.userSignIn);
+
   const [error, setError] = useState(false);
 
   const schema = yup.object().shape({
@@ -42,6 +45,7 @@ function Login() {
 
   return (
     <Container>
+      {token && <Redirect to='/personalPlants'/>}
       <Content>
         <AnimationContainer>
           <form onSubmit={handleSubmit(onSubmit)}>
