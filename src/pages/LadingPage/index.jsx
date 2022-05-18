@@ -2,6 +2,7 @@
 
 import Logo from "../../assets/images/logoDesktop.png";
 import { AnimationContainer, Background, Container, Content } from "./styles";
+import { BiArrowToRight } from 'react-icons/bi';
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 
@@ -13,18 +14,24 @@ function Login() {
           <section>
             <img src={Logo} alt={Logo} />
             <h2>MY PLANT</h2>
-            <h3>Busque, conheça, cuide</h3>
           </section>
+
+          <h3>Busque por suas plantas,
+             conheça mais sobre elas.
+              Cuide do seu jardim virtual!</h3>
 
           <Link to="/home">
             <Button>Iniciar</Button>
           </Link>
           <Link to="/signup">
-            <Button GreenSchema>Cadastre-se</Button>
+            <Button GreenSchema>Cadastrar</Button>
           </Link>
-
-          <p>Já possui conta?</p> 
-          <Link to="/login"><span>Entrar</span></Link>
+          <div>
+            <p>Já possui uma conta? </p>{" "}
+            <Link to="/login">
+              <span>Entrar</span>
+            </Link>
+          </div>
         </AnimationContainer>
       </Content>
       <Background />

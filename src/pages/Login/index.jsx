@@ -70,7 +70,7 @@ function Login() {
             />
             <Button type="submit">Entrar</Button>
             <p>Ainda não possui conta?</p>
-            <Link to="/">
+            <Link to="/signup">
               <Button GreenSchema>Cadastrar</Button>
             </Link>
           </form>
