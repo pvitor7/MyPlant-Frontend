@@ -109,7 +109,7 @@ function Signup() {
             <span>{errors.terms?.message}</span>
             <Button type="submit">Cadastrar</Button>
             <p>
-              Já tem uma conta?
+              Já possui uma conta?
               <Link to="/login">Entrar</Link>
             </p>
           </form>

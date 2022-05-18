@@ -7,8 +7,10 @@ const signUpThunk = (registerData) => (dispatch) => {
   api
     .post('/signup/', registerData)
     .then((response) => {
-      dispatch(signUp(response.data));
       toast.success('Conta criada com sucesso!');
+      setTimeout(()=>{
+        dispatch(signUp(response.data));
+      },2000)
     })
     .catch((err) => toast.error('Ops! Esse email já existe.'));
 };
