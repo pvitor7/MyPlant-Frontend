@@ -71,24 +71,25 @@ export const ModalInfo = styled.div`
       height: 67%;
       width: 90%;
       align-items: center;
+      justify-content: space-between;
     }
 
     label {
       display: flex;
       background-color: #56b297;
-      width: 60%;
+      width: 70%;
       height: 22px;
       border-radius: 3px;
       justify-content: center;
       align-items: center;
       color: white;
-      font-size: 100%;
+      font-size: 120%;
     }
 
     .div--name {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       width: 100%;
       height: 15%;
@@ -96,15 +97,30 @@ export const ModalInfo = styled.div`
       margin-top: 10px;
     }
 
+
+    .input--editName{
+    
+      bottom: auto;
+      width: 90%;
+      border: none;
+      border-radius: 10px;
+      background-color: #F2F2F4;
+      color: gray;
+      padding: 3px;
+      margin-top: 15px;
+      min-height: 40px;
+    }
+
     p {
-      height: 10px;
+      display: flex;
+      justify-content: center;
       font-size: 18px;
       margin: 10px;
+      width: 90%;
     }
 
     .p--info {
       height: 80%;
-
       overflow: auto;
       /* overflow: hidden;
       text-overflow: ellipsis; */
@@ -121,22 +137,26 @@ export const ModalInfo = styled.div`
       scrollbar-width: none; /* Firefox */
     }
 
+
+
     .div--scientificName {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       height: 15%;
       width: 100%;
       color: #b7d251;
     }
 
+    
+
     .div--information {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      width: 80%;
+      justify-content: space-between;
+      width: 100%;
       max-height: 55%;
       text-align: center;
       color: #b7d251;
@@ -144,15 +164,65 @@ export const ModalInfo = styled.div`
       text-overflow: ellipsis;
     }
 
+    .input--editInfo{
+      bottom: auto;
+      width: 90%;
+      border: none;
+      border-radius: 10px;
+      background-color: #F2F2F4;
+      color: gray;
+      padding: 3px;
+      margin-top: 10px;
+      min-height: 100px;
+    }
+
+  
     .div--basicCare {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       width: 100%;
       color: #b7d251;
       margin-bottom: 10px;
       height: 15%;
+    }
+
+    .div--editDeleteButton{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .button--SalvarAlteracoes{
+      width: 90%;
+      max-width: 250px;
+      height: 60px;
+      font-size: 22px;
+      color: #ffffff;
+      background-color: #56b297;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0em 0.1em 0.4em gray;
+      margin: 10px;
+    }
+
+    .button--RemoverPlanta{
+      width: 90%;
+      max-width: 250px;
+      height: 60px;
+      font-size: 22px;
+      color: #ffffff;
+      background-color: #b7d251;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0em 0.1em 0.4em gray;
+      margin: 10px;
     }
   }
 `;
