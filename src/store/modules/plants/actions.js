@@ -1,3 +1,4 @@
+/* eslint-disable */
 import PERSONAL_PLANTS, { ADD_PLANT } from './actionTypes';
 
 function personalPlants(plants) {

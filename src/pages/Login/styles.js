@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styled, { keyframes } from 'styled-components';
 import SignupImagePlants from '../../assets/images/plants.png';
 

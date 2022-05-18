@@ -5,8 +5,9 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120vh;
-  padding-bottom: 65px;
+  height: 105vh;
+  padding-top: 30px;
+  padding-bottom: 85px;
   
   section {
     display: flex;
@@ -18,7 +19,7 @@ export const Container = styled.div`
 
   div {
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
     align-items: center;
     
   }
@@ -35,16 +36,16 @@ export const Container = styled.div`
   }
 
   .lightGreen {
-    color: #98B13A;
-    font-family: 'Nunito';
+    color: var(--green);
+    font-family: 'nunito';
     font-weight: bold;
     font-size: 32px;
     align-self: left;
   }
 
   .darkGreen {
-    color: #56B297;
-    font-family: 'Nunito';
+    color: var(--blue);
+    font-family: 'nunito';
     font-weight: bold;
     font-size: 32px;
     align-self: right;
@@ -83,7 +84,7 @@ export const Footer = styled.div`
   top: 91%;
   display: flex;
   justify-content: center;
-  background-color: #FFFFFF;
+  background-color: var(--white);
   width: 100%;
   height: 10vh;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
@@ -92,6 +93,7 @@ export const Footer = styled.div`
   div {
     display: flex;
     justify-content: center;
+    align-items: center;
     align-self: center;
     width: 90%;
     height: 40%;
@@ -103,16 +105,18 @@ export const Footer = styled.div`
     width: 70%;
     border-radius: 4px;
     border: none;
-    background-color: #E6E6E8;
-    font-family: 'Nunito';
+    background-color: var(--grey);
+    font-family: 'nunito';
     padding: 10px;
   }
 
   button {
-    background-color: #56B297;
+    background-color: var(--blue);
     border: none;
     border-radius: 4px;
-    color: #FFFFFF;
+    width: 35px;
+    height: 35px;
+    color: var(--white);
     cursor: pointer;
   }
 
@@ -130,19 +134,21 @@ export const ContainerPlants = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap:10px;
   align-items: center;
-  height: 120vh;
-  padding-top: 10px;
+  height: auto;
+  padding-top: 20px;
+
 
   .divButtons {
     display: none;
   }
 
-  .divButtons > button {
-    background-color: #56B297;
-    border: 1px solid #56B297;
+  .divButtons button {
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
     border-radius: 4px;
-    color: #FFFFFF;
+    color: var(--white);
     filter:drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
 
     font-family: 'Inter';
@@ -155,17 +161,19 @@ export const ContainerPlants = styled.div`
   }
 
   ul {
-    width: 85%;
-    background-color: #56B297;
+    width: 90%;
+    background-color: var(--blue);
     border-radius: 4px;
-    height: 120vh;
     padding: 0;
-    padding-top: 45px;
+    padding-top: 35px;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 39px;
-    
+    gap: 30px;
+    overflow: scroll;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   
   li {
@@ -178,9 +186,9 @@ export const ContainerPlants = styled.div`
     flex-direction: column;
     align-items: center;
 
-    background-color: #FFFFFF;
+    background-color: var(--white);
     border-radius: 4px;
-    border: 1px solid #FFFFFF;
+    border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     gap: 20px;
@@ -188,9 +196,11 @@ export const ContainerPlants = styled.div`
   }
 
   img {
-    height: 40%;
+    height: 55%;
     width: 100%;
-    background-color: #E6E6E8;
+    object-fit: cover;
+    border-radius: 4px 4px 0px 0px; 
+    background-color: var(--grey);
   }
 
   .buttonInfo {
@@ -198,40 +208,45 @@ export const ContainerPlants = styled.div`
     top: 6px;
     right: 7px;
     border-radius: 100px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid var(--white);
     width: 31px;
     height: 31px;
 
-    color: #56B297;
-    background-color: #FFFFFF;
+    color: var(--blue);
+    background-color: var(--white);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
   }
 
   h4 {
-    color: #98B13A;
+    color: var(--green);
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Inter ';
+    font-family: 'Inter';
   }
 
   .buttonComment {
-    color: #56B297;
+    color: var(--blue);
+    width: 20px;
+    height: 20px;
     border-radius: 100px;
-    border: 1px solid #FFFFFF;
-    background-color: #FFFFFF;
+    border: 1px solid var(--white);
+    background-color: var(--white);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
   }
 
   @media screen and (min-width: 768px) {
     height: 80vh;
+    margin-top: 40px;
+    
 
     .divCards {
       flex-direction: row;
       align-items: flex-start;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
+
     }
 
     li {
@@ -254,5 +269,3 @@ export const ContainerPlants = styled.div`
 
   }
 `
-
-

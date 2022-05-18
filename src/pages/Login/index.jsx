@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable*/
 import React, { useState } from 'react';
 
 import { FiMail, FiLock } from 'react-icons/fi';
