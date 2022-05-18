@@ -5,7 +5,7 @@ import signIn from './actions';
 
 const signInThunk = (userData) => (dispatch) => {
   api
-    .post('/login/', userData)
+    .post('/login', userData)
     .then((response) => {
       localStorage.setItem('token', JSON.stringify(response.data.accessToken));
       localStorage.setItem('user', JSON.stringify(response.data.user));
