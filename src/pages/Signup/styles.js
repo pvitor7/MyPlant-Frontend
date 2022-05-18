@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable*/
 import styled, { keyframes } from 'styled-components';
 import imgRegister from '../../assets/images/imgRegister.png';
 

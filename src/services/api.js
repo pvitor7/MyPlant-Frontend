@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+/* eslint-disable*/
+>>>>>>> feature/HomePage
 import axios from 'axios';
 import { toast } from 'react-toastify';
 

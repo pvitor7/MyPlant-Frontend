@@ -1,5 +1,5 @@
-/* eslint-disable */
-import React from 'react';
+/* eslint-disable*/
+import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 // import Route from './route';
 
