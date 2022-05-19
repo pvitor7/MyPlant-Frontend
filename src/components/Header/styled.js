@@ -1,6 +1,4 @@
-/* eslint-disable */
 import styled from 'styled-components';
-import { BiArrowToRight } from 'react-icons/bi';
 
 const Container = styled.div`
   * {
@@ -93,4 +91,5 @@ const Container = styled.div`
   
   }
 `;
+
 export default Container;

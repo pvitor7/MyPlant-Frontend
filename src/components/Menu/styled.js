@@ -12,7 +12,6 @@ const Container = styled.div`
  margin-left: 2px;
  z-index: 999;
  transition:max-width 0.75s;
- max-height: 100%;
  padding-right: 0px;
  padding-left: 0px;
 
@@ -31,7 +30,7 @@ const Container = styled.div`
     align-items: center;
     padding: 0 10%;
     margin: auto 0;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 33px;
     height: 15vh;
     background-color: white;
@@ -50,19 +49,26 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    box-shadow: 0px 6px 8px 2px rgba(0,0,0,0.47);
     overflow-y: auto;
-    max-height: 470px;
+    box-shadow: 0px 6px 8px 2px rgba(0,0,0,0.47);
     background-color: white;
     margin-top: 5px;
   }
-
+  main::-webkit-scrollbar {
+    width: 0px;
+}
+.darkmode{
+  width: 45px;
+}
   main ul {
     display: flex;
     flex-direction: column;
     width: 0%;
     margin: 30px 0px;
     transition: width 0.5s;
+  }
+  h4{
+    font-size: 12px;
   }
   main li {
     border-radius: 0%;
@@ -113,7 +119,7 @@ const Container = styled.div`
     height: 23px;
   }
 
-  @media (max-width:1350px){
+  @media (max-width:1200px){
 
     header p {
     font-size: 18px;
@@ -121,7 +127,9 @@ const Container = styled.div`
 
   main{
     max-height: 400px;
+    overflow-y: auto;
   }
+ 
 
   .buttonreturn{
     margin-left: 200px;
@@ -147,7 +155,6 @@ const Container = styled.div`
       opacity: 100;
       transition: opacity 2s;
     }
-  }
-`;
+  }`;
 
 export default Container;
