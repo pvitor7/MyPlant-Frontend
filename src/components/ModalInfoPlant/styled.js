@@ -1,3 +1,4 @@
+/* eslint-disable */
 import styled from 'styled-components';
 
 const ModalInfo = styled.div`

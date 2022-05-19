@@ -203,7 +203,7 @@ export const ContainerPlants = styled.div`
     background-color: var(--grey);
   }
 
-  .buttonInfo {
+  /* .buttonInfo {
     position: absolute;
     top: 6px;
     right: 7px;
@@ -216,7 +216,7 @@ export const ContainerPlants = styled.div`
     background-color: var(--white);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-  }
+  } */
 
   h4 {
     color: var(--green);
@@ -225,7 +225,7 @@ export const ContainerPlants = styled.div`
     font-family: 'Inter';
   }
 
-  .buttonComment {
+  /* .buttonComment {
     color: var(--blue);
     width: 20px;
     height: 20px;
@@ -234,7 +234,7 @@ export const ContainerPlants = styled.div`
     background-color: var(--white);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-  }
+  } */
 
   @media screen and (min-width: 768px) {
     height: 80vh;
@@ -268,4 +268,4 @@ export const ContainerPlants = styled.div`
     height: 80vh;
 
   }
-`
+`;
