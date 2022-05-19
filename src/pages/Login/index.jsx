@@ -1,5 +1,5 @@
-/* eslint-disable*/
-import React, { useState } from 'react';
+// /* eslint-disable*/
+import React from 'react';
 
 import { FiMail, FiLock } from 'react-icons/fi';
 import { useForm } from 'react-hook-form';
@@ -16,9 +16,7 @@ import Button from '../../components/Button';
 import signInThunk from '../../store/modules/userSignIn/thunks';
 
 function Login() {
-  const { token } = useSelector((state) => state.userSignIn);
-
-  const [error, setError] = useState(false);
+  const token = useSelector((state) => state.userSignIn);
 
   const schema = yup.object().shape({
     email: yup.string().email('Email inválido!').required('Campo obrigatório!'),

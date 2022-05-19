@@ -5,7 +5,7 @@ import signUp from './actions';
 
 const signUpThunk = (registerData) => (dispatch) => {
   api
-    .post('/signup/', registerData)
+    .post('/signup', registerData)
     .then((response) => {
       toast.success('Conta criada com sucesso!');
       setTimeout(()=>{

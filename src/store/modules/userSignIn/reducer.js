@@ -1,5 +1,5 @@
 /* eslint-disable*/
-import { USER_SIGNIN } from './actionTypes';
+import USER_SIGNIN from './actionTypes';
 
 const token = localStorage.getItem('token') || '';
 const user = localStorage.getItem('user') || '';

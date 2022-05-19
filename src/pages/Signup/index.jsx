@@ -46,12 +46,9 @@ function Signup() {
     dispatch(signUpThunk(registerData));
   };
 
-  // const route = () => {
-  //   history.push('/login');
-  // };
-
   return (
     <Container>
+      {console.log(user)}
       {Object.keys(user).length !== 0 && <Redirect to="/login" />}
       <Background />
       <Content>
