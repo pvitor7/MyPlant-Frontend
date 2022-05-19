@@ -13,10 +13,10 @@ import {
 import Logo from '../../assets/images/logoDesktop.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import signInThunk from '../../store/modules/userSignIn/thunks';
+import { logInThunk } from '../../store/modules/user/thunks';
 
 function Login() {
-  const token = useSelector((state) => state.userSignIn);
+  const { token } = useSelector((state) => state.user);
 
   const schema = yup.object().shape({
     email: yup.string().email('Email inválido!').required('Campo obrigatório!'),
@@ -37,7 +37,7 @@ function Login() {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(signInThunk(data));
+    dispatch(logInThunk(data));
   };
 
   return (

@@ -1,24 +1,25 @@
 /* eslint-disable */
-import { USER_SIGNUP, USER_SIGNIN } from './actionTypes';
+import { USER_LOGIN, USER_SIGNUP } from './actionTypes';
 
-// const token = localStorage.getItem("token") || "";
+let token = JSON.parse(localStorage.getItem('token')) || '';
+let user = JSON.parse(localStorage.getItem('user')) || '';
 
 const defaultState = {
-  user: {},
-  // token: "",
+  token,
+  user,
 };
 
 const userReducer = (state = defaultState, action) => {
   switch (action.type) {
+    case USER_LOGIN:
+      ({ token, user } = action.info);
+      return { token, user };
+
     case USER_SIGNUP:
-      const { user } = action;
+      ({ user } = action.info);
+      ({ token } = state);
 
-      return { ...state, user };
-
-      // case USER_SIGNIN:
-      //     const { token } = action;
-
-      //     return { ...state, token };
+      return { token, user };
 
     default:
       return state;

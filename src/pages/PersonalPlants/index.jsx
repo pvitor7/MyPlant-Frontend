@@ -8,7 +8,7 @@ import { wishList } from '../../store/modules/wishList/thunks';
 import { MyGarden, PersonalGarden, MyWish } from './styled';
 
 function PersonalPlants() {
-  const { token, user } = useSelector((state) => state.userSignIn);
+  const { token, user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const plantsUser = useSelector((state) => state.userPlants);
@@ -27,7 +27,7 @@ function PersonalPlants() {
 
   return (
     <PersonalGarden>
-      {!token && <Redirect to="/signup" />}
+      {!token && <Redirect to="/login" />}
 
       <h2>
         Boas vindas,

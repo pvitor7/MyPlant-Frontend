@@ -1,4 +1,5 @@
-/* eslint-disable */
+/*eslint-disable*/
+const USER_LOGIN = '@user/LOGNIN';
+const USER_SIGNUP = '@user/SIGNUP';
 
-export const USER_SIGNUP = '@user/SIGNUP';
-// export const USER_SIGNIN = '@user/SIGNIN';
+export {USER_LOGIN, USER_SIGNUP}

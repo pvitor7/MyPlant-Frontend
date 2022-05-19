@@ -1,35 +1,35 @@
-/* eslint-disable */
 import { toast } from 'react-toastify';
-import { useHistory } from 'react-router-dom';
-
 import api from '../../../services/api';
-import { signUp } from './actions';
 
-export const signUpThunk = (registerData) => (dispatch) => {
-  const history = useHistory();
+import { logIn, signUp } from './actions';
 
+const logInThunk = (userData) => (dispatch) => {
   api
-    .post('/signup/', registerData)
+    .post('/login', userData)
     .then((response) => {
-      dispatch(signUp(response.data));
-      toast.success('Conta criada com sucesso!');
-      return history.push('/login');
+      localStorage.setItem('token', JSON.stringify(response.data.accessToken));
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+
+      toast.success('Login realizado com sucesso!');
+      setTimeout(() => {
+        dispatch(logIn(response.data.accessToken, response.data.user));
+      }, 2000);
     })
-    .catch((err) => toast.error('Ops! Ocorreu um erro.'));
+    .catch(() => toast.error('Email ou senha inválidos'));
 };
 
-// export const signInThunk = (userData) => (dispatch) => {
-//   const history = useHistory();
-//   api
-//     .post("/login/", userData)
-//     .then((response) => {
-//       const { token, user } = response.data;
+const signUpThunk = (registerData) => (dispatch) => {
+  console.log('dentro do thunk sign up');
+  api
+    .post('/signup', registerData)
+    .then((response) => {
+      toast.success('Conta criada com sucesso!');
+      console.log(registerData);
+      setTimeout(() => {
+        dispatch(signUp(response.data));
+      }, 2000);
+    })
+    .catch(() => toast.error('Ops! Esse email já existe.'));
+};
 
-//       localStorage.setItem("@MyPlant:token", JSON.stringify(token));
-//       localStorage.setItem("@MyPlant:user", JSON.stringify(user));
-//       return history.push("/home");
-//     })
-//     .catch((err) => toast.error("Email ou senha inválidos"));
-
-//      dispatch(signIn)
-// };
+export { logInThunk, signUpThunk };

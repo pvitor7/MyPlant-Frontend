@@ -1,5 +1,6 @@
-/* eslint-disable */
-import { USER_SIGNIN, USER_SIGNUP } from './actionTypes';
+import { USER_LOGIN, USER_SIGNUP } from './actionTypes';
 
-export const signUp = (user) => ({ type: USER_SIGNUP, user });
-// export const signIn = (token) => ({ type: USER_SIGNIN, token });
+const logIn = (token, user) => ({ type: USER_LOGIN, info: { user, token } });
+const signUp = (user) => ({ type: USER_SIGNUP, info: { user } });
+
+export { logIn, signUp };

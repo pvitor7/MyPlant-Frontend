@@ -10,13 +10,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   AnimationContainer, Background, Container, Content,
 } from './styles';
-import signUpThunk from '../../store/modules/userSignUp/thunks';
+import { signUpThunk } from '../../store/modules/user/thunks';
 import Logo from '../../assets/images/logoDesktop.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 function Signup() {
-  const { user } = useSelector((state) => state.userSignUp);
+  const { user } = useSelector((state) => state.user);
 
   const schema = yup.object().shape({
     name: yup.string().required('Campo obrigatório!'),
@@ -43,6 +43,7 @@ function Signup() {
   });
 
   const onSubmit = (registerData) => {
+    console.log('dei o dispatch');
     dispatch(signUpThunk(registerData));
   };
 
