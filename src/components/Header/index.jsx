@@ -1,11 +1,10 @@
 /* eslint-disable */
-
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { CgLogIn } from 'react-icons/cg';
 import Container from './styled';
 import logo from '../../imgs/logo.png';
 import icon from '../../imgs/menuzinho.png';
-import seta from '../../imgs/setinha.png';
 import Menu from '../Menu/index';
 
 function Header() {
@@ -14,6 +13,9 @@ function Header() {
 
   function home() {
     redirecionamento.push('/');
+  }
+  function pages(destino) {
+    redirecionamento.push(destino);
   }
 
   function menuAtivo() {
@@ -24,18 +26,20 @@ function Header() {
     <Container>
       <header>
         <div onClick={menuAtivo} className="icon-menu">
-          <img src={icon} alt="icone" />
+          <img src={icon} />
           <p>Menu</p>
         </div>
-        {menuOpen === true ? (
-          <Menu sair={setMenuOpen} />
+        <Menu abrir={menuOpen} sair={setMenuOpen} />
+        <div className="figure-header">
+          <img src={logo} onClick={home} />
 
-        ) : null }
-
-        <img src={logo} alt="logo" onClick={home} />
+        </div>
         <div className="button-login">
-          <img src={seta} alt="arrow icon" />
-          <button type="button">Entrar</button>
+
+          <button onClick={() => pages('/login')}>
+            <CgLogIn className="icone" />
+            Entrar
+          </button>
         </div>
       </header>
     </Container>

@@ -1,15 +1,12 @@
 /*eslint-disable*/
-import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
-import { Container, ContainerPlants, Footer } from "./styled";
-import getPublicPlants from "../../store/modules/publicPlants/thunks";
-import Header from "../../components/Header";
-import Lupa from "../../assets/images/imagesHome/lupaHome.png";
-import ImgAddGarden from "../../assets/images/imagesHome/imgAddGarden.png";
-import ImgBuildGarden from "../../assets/images/imagesHome/imgBuildGarden.png";
-import ImgSeeComment from "../../assets/images/imagesHome/imgSeeComents.png";
-import { MdOutlineComment } from "react-icons/md";
-import { FaInfo, FaSearch } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
+import { MdOutlineComment } from 'react-icons/md';
+import { Container, Footer, ContainerPlants } from './styled';
+import Lupa from '../../assets/images/imagesHome/lupaHome.png';
+import ImgAddGarden from '../../assets/images/imagesHome/imgAddGarden.png';
+import ImgBuildGarden from '../../assets/images/imagesHome/imgBuildGarden.png';
+import ImgSeeComment from '../../assets/images/imagesHome/imgSeeComents.png';
+import Header from '../../components/Header';
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -69,8 +66,7 @@ function HomePage() {
   return (
     <>
       <Header />
-
-      {showResults ? (
+      {search !== '' ? (
         <ContainerPlants>
           <div className="divButtons">
             {showResults.length > 0 && (

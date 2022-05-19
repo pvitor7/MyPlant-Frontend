@@ -1,4 +1,3 @@
-/* eslint-disable */
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -12,19 +11,22 @@ const Container = styled.div`
     color: #56b297;
     border-radius: 4px;
   }
-  h2 {
+  h1 {
     text-align: center;
+    margin-top: 20px;
   }
   ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 auto;
+    align-items: baseline;
+    padding: 0 20%;
+    margin-top: 20px;
   }
   .informacoes-devs {
     max-width: 180px;
-    max-height: 200px;
+    max-height: 300px;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -35,7 +37,7 @@ const Container = styled.div`
     margin-right: 50px;
   }
   .informacoes-devs h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .informacoes-devs p{
     color: #98b13a;
@@ -52,6 +54,9 @@ const Container = styled.div`
     ul{
       flex-wrap: nowrap;
       overflow-x: auto;
+    }
+    li{
+      width: 200px;
     }
   }
 `;
