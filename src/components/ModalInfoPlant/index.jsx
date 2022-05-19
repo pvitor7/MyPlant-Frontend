@@ -10,9 +10,6 @@ import {
 
 function ModalInfoPlant({ setModal, plant, infoPlant = false, comment = false }) {
 
-  const token = 
-  // JSON.parse(localStorage.getItem("token")) || 
-  false;
 
   const [newEditPlant, setNewEditPlant] = useState({
     userId: plant.userId,
@@ -89,17 +86,17 @@ function ModalInfoPlant({ setModal, plant, infoPlant = false, comment = false })
             )}
           </div>
         
+        {
+          infoPlant == false &&
+
             <div className="div--basicCare">
               <label className="label--basicCare">Cuidados básicos:</label>
               <p>{plant.basic_care}</p>
             </div>
-                
+        }
 
-
-        
-
-          {infoPlant ||
-            (comment && (
+          {infoPlant &&
+            (
               <div className="div--editDeleteButton">
                 <button
                   type="button"
@@ -119,7 +116,7 @@ function ModalInfoPlant({ setModal, plant, infoPlant = false, comment = false })
                   Fechar
                 </button>
               </div>
-            ))}
+            )}
         </div>
     
       </div>
