@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PlantCard = styled.div`
   @media (min-width: 320px) {
@@ -14,7 +14,7 @@ const PlantCard = styled.div`
     background-color: #ffffff;
     box-shadow: 0px 5px 5px gray;
 
-    .div--cardImage{ 
+    .div--cardImage {
       height: 50%;
       width: 100%;
       display: flex;
@@ -29,17 +29,30 @@ const PlantCard = styled.div`
       box-shadow: 0px 1px 5px gray;
     }
 
+    .buttonInfo {
+      top: 6px;
+      right: 7px;
+      border-radius: 100px;
+      border: 1px solid var(--white);
+      width: 30px;
+      height: 30px;
+      color: var(--blue);
+      background-color: var(--white);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
 
     .h3--PlantTitle {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       flex-wrap: wrap;
       color: #b7d251;
       font-family: "Inter", sans-serif;
       width: 60%;
       font-weight: 500;
       font-size: 17px;
-      height: 3%;
+      height: 13%;
+      text-align: center;
     }
 
     .p--scientificName {
@@ -49,6 +62,7 @@ const PlantCard = styled.div`
       font-family: "Nunito";
       font-style: italic;
       color: #56b297;
+      text-align: center;
     }
 
     .div--CardButtons {
@@ -57,11 +71,20 @@ const PlantCard = styled.div`
       height: 25%;
       justify-content: space-around;
       align-items: center;
-      
     }
 
+    .buttonComment {
+      color: var(--blue);
+      width: 30px;
+      height: 30px;
+      border-radius: 100px;
+      border: 1px solid var(--white);
+      background-color: var(--white);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
 
-    .button--BiPencil{
+    .button--BiPencil {
       display: flex;
       justify-content: center;
       align-items: center;

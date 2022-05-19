@@ -10,6 +10,8 @@ import ImgBuildGarden from "../../assets/images/imagesHome/imgBuildGarden.png";
 import ImgSeeComment from "../../assets/images/imagesHome/imgSeeComents.png";
 import { MdOutlineComment } from "react-icons/md";
 import { FaInfo, FaSearch } from "react-icons/fa";
+import { Modal } from "@mui/material";
+import MyPot from "../../components/MyPot";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -33,6 +35,7 @@ function HomePage() {
   const [filteredPlants, setFilteredPlants] = useState(null);
   const [showResults, setShowResults] = useState(null);
   const [modal, setModal] = useState(false);
+  const [inputComment, setInputComment] = useState(false);
 
   useEffect(() => {
     if (filteredPlants) {
@@ -58,7 +61,9 @@ function HomePage() {
   }
 
   function searchInput() {
+    console.log(search);
     setInput(search);
+
     setColor(null);
     const plantsFilter = allPlants.filter(({ name }) => {
       return name.toLowerCase().includes(search.toLowerCase());
@@ -92,17 +97,19 @@ function HomePage() {
               <p>Não existe "{input}" no banco de dados.</p>
             ) : (
               showResults?.map((a, index) => {
-                return (                  
-                  <li key={index}>
-                    <button className="buttonInfo">
-                      <FaInfo />
-                    </button>
-                    <img src={a.imgUrl} alt="imgPlant" />
-                    <h4>{a.name}</h4>
-                    <button className="buttonComment">
-                      <MdOutlineComment />
-                    </button>
-                  </li>
+                return (
+                   <MyPot onComment={setInputComment} homePage key={index} plant={a}/>
+
+                  // <li key={index}>
+                  //   <button className="buttonInfo">
+                  //     <FaInfo />
+                  //   </button>
+                  //   <img src={a.imgUrl} alt="imgPlant" />
+                  //   <h4>{a.name}</h4>
+                  //   <button className="buttonComment">
+                  //     <MdOutlineComment />
+                  //   </button>
+                  // </li>
                 );
               })
             )}
@@ -134,17 +141,35 @@ function HomePage() {
       )}
 
       <Footer>
-        <div>
-          <input
-            name="buscar"
-            value={search}
-            placeholder="Busque por nome"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <button onClick={() => searchInput()}>
-            <FaSearch />
-          </button>
-        </div>
+      { inputComment === true ? (
+            <div>
+              <input
+              name="buscar"
+              value={search}
+              placeholder="Busque por nome"
+              onChange={(e) => setInputComment(e.target.value)}
+              />
+              <button 
+              // onClick={}
+              >
+                <MdOutlineComment />
+              </button>
+            </div>
+        ) : (
+            <div>
+              <input
+              name="buscar"
+              value={search}
+              placeholder="Busque por nome"
+              onChange={(e) => setSearch(e.target.value)}
+              />
+              <button 
+              onClick={() => searchInput()}
+              >
+                <FaSearch />
+              </button>
+            </div>
+        )}
       </Footer>
     </>
   );

@@ -48,7 +48,7 @@ function Signup() {
 
   return (
     <Container>
-      {console.log(user)}
+      {/* {console.log(user)} */}
       {Object.keys(user).length !== 0 && <Redirect to="/login" />}
       <Background />
       <Content>
