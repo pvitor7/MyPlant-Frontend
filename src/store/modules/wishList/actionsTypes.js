@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const WISH_LIST = '@wishList/getItem';
 
 export const ADD_WISH_LIST = '@addWishList/postItem';

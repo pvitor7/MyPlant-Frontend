@@ -88,7 +88,7 @@ function MyPot({
           </button>
         )}
 
-        <button
+        {addMyWish || myChild && (<button
           type="button"
           className="button--Pot"
           onClick={() => {
@@ -98,7 +98,7 @@ function MyPot({
           }}
         >
           x
-        </button>
+        </button>)}
       </div>
     </PlantCard>
   );
