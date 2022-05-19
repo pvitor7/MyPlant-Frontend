@@ -1,9 +1,10 @@
-// /* eslint-disable */
+/* eslint-disable */
 import React from 'react';
 import Container from './styled';
 import Header from '../../components/Header';
 import Rick from '../../imgs/Henrique.jpg';
 import PauloV from '../../imgs/PauloVitor.jpg';
+import PauloD from '../../imgs/paulo.jpeg'
 import Bruna from '../../imgs/Bruna.jpeg';
 
 function Equipe() {
@@ -14,7 +15,7 @@ function Equipe() {
       cargo: 'Scrum Master',
     },
     {
-      foto: 'https://dinorma.com.br/wp-content/uploads/2017/06/Bolo-Brasileirinhos.png',
+      foto: PauloD,
       nome: 'Paulo David',
       cargo: 'Tech Leader',
     },

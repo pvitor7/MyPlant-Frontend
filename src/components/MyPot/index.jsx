@@ -7,7 +7,7 @@ import {
   deletePrivatePlants,
 } from '../../store/modules/plants/thunks';
 import ModalInfoPlant from '../ModalInfoPlant';
-import { deleteWish, myWishAdd } from '../../store/modules/wishList/thunks';
+import { wishListDelete, wishListAdd } from '../../store/modules/wishList/thunks';
 
 function MyPot({
   dispatch, plant, myChild = false, addMyWish = false,
@@ -67,7 +67,7 @@ function MyPot({
           <button
             onClick={() => {
               console.log("informações do card");
-              myWishAdd(dispatch, plant);
+              wishListAdd(dispatch, plant);
 
             }}
             className="button--Pot"
@@ -93,7 +93,7 @@ function MyPot({
           className="button--Pot"
           onClick={() => {
             addMyWish
-              ? deleteWish(plant.id, dispatch)
+              ? wishListDelete(plant.id, dispatch)
               : deletePrivatePlants(plant.id, dispatch);
           }}
         >

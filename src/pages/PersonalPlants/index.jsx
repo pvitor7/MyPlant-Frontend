@@ -8,11 +8,12 @@ import { wishList } from '../../store/modules/wishList/thunks';
 import { MyGarden, PersonalGarden, MyWish } from './styled';
 
 function PersonalPlants() {
-  const { token, user } = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
+
+  const { token, user } = useSelector((state) => state.user);
+  
   const plantsUser = useSelector((state) => state.userPlants);
-  const wishUserList = useSelector((state) => state.userWish);
+  const {userWishList} = useSelector((state) => state);
 
   const [GardenOpen, setGardenOpen] = useState(80);
   const [wishOpen, setWishOpen] = useState(12);
@@ -28,7 +29,7 @@ function PersonalPlants() {
   return (
     <PersonalGarden>
       {!token && <Redirect to="/login" />}
-
+      {console.log(userWishList)}
       <h2>
         Boas vindas,
         {' '}
@@ -88,8 +89,8 @@ function PersonalPlants() {
           </h4>
           <div className="div--MyWish--list">
             {
-            wishUserList?.length > 0
-            && wishUserList?.map((plant, index) => <MyPot dispatch={dispatch} addMyWish plant={plant} key={index} />)
+            userWishList?.length > 0
+            && userWishList?.map((plant, index) => <MyPot dispatch={dispatch} addMyWish plant={plant} key={index} />)
 }
           </div>
         </MyWish>
