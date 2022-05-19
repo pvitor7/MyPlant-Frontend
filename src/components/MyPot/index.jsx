@@ -1,11 +1,10 @@
-// /* eslint-disable */
-import { BiFile, BiHeart, BiPencil } from 'react-icons/bi';
+/* eslint-disable */
+import { BiFile, BiPencil } from 'react-icons/bi';
 import React, { useState } from 'react';
 import PlantCard from './styled';
 import {
   addPrivatePlants,
   deletePrivatePlants,
-  editMyPlant,
 } from '../../store/modules/plants/thunks';
 import ModalInfoPlant from '../ModalInfoPlant';
 import { deleteWish, myWishAdd } from '../../store/modules/wishList/thunks';

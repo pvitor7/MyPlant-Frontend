@@ -1,12 +1,11 @@
-/* eslint-disable*/
-import React, { useState } from 'react';
+// /* eslint-disable*/
+import React from 'react';
 
 import { FiUser, FiMail, FiLock } from 'react-icons/fi';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link, useHistory, Redirect } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   AnimationContainer, Background, Container, Content,
@@ -17,9 +16,6 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 function Signup() {
-  const [error, setError] = useState(false);
-  const history = useHistory();
-
   const { user } = useSelector((state) => state.userSignUp);
 
   const schema = yup.object().shape({

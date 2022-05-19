@@ -1,4 +1,4 @@
-import { USER_SIGNIN } from './actionTypes';
+import USER_SIGNIN from './actionTypes';
 
 const signIn = (token, user) => ({ type: USER_SIGNIN, info: { token, user } });
 

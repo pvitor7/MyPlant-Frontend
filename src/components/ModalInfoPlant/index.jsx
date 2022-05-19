@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { ModalInfo } from './styled';
+import ModalInfo  from './styled';
 import {
   // addPrivatePlants,
   // deletePrivatePlants,
