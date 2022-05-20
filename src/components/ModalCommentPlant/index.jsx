@@ -44,7 +44,8 @@ function ModalCommentPlant({ onComment, setModalComment, plant }) {
           <button
             type="button"
             className="button--CloseModal"
-            onClick={() => {setModalComment(false)
+            onClick={() => {
+              setModalComment(false)
               onComment(false)
             }}
           >
@@ -61,7 +62,10 @@ function ModalCommentPlant({ onComment, setModalComment, plant }) {
                 return(
             
               <li key={comment.id}  className="li--comment">
-              <label className="label--comment"><BiUserCircle/>{comment.owner.name}</label>
+              <label className="label--comment"><BiUserCircle/>{
+              // comment.owner.name
+              "pessoa"
+              }</label>
                 <p>{comment.msg}</p>
                 </li>
               

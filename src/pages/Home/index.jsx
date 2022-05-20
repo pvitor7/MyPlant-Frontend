@@ -12,6 +12,7 @@ import { MdOutlineComment } from "react-icons/md";
 import { FaInfo, FaSearch } from "react-icons/fa";
 import { Modal } from "@mui/material";
 import MyPot from "../../components/MyPot";
+import { postPublicComments } from "../../store/modules/coments/thunks";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ function HomePage() {
   const [showResults, setShowResults] = useState(null);
   const [modal, setModal] = useState(false);
   const [inputComment, setInputComment] = useState(false);
+  const [idPlantComment, setIdPlantComment] = useState('');
 
   useEffect(() => {
     if (filteredPlants) {
@@ -98,7 +100,7 @@ function HomePage() {
             ) : (
               showResults?.map((a, index) => {
                 return (
-                   <MyPot onComment={setInputComment} homePage key={index} plant={a}/>
+                   <MyPot setIdPlantComment={setIdPlantComment} onComment={setInputComment} homePage key={index} plant={a}/>
 
                   // <li key={index}>
                   //   <button className="buttonInfo">
@@ -147,10 +149,13 @@ function HomePage() {
               name="buscar"
               value={search}
               placeholder="Busque por nome"
-              onChange={(e) => setInputComment(e.target.value)}
+              onChange={(e) => {
+                setInputComment(e.target.value);
+              }
+              }
               />
               <button 
-              // onClick={}
+              onClick={() => postPublicComments(idPlantComment, search)}
               >
                 <MdOutlineComment />
               </button>

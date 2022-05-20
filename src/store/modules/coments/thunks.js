@@ -8,4 +8,16 @@ const commentsThunk = (id) => {
     .catch(err => console.log(err))
 }
 
-export { commentsThunk };
+
+const postPublicComments = (id, comment) => {
+
+    console.log(id)
+    console.log(comment)
+
+    // api.
+    // post(`/comments/${id}`, comment)
+    // .then((res) => console.log(res))
+    // .catch(err => console.log(err))
+}
+
+export { commentsThunk, postPublicComments };

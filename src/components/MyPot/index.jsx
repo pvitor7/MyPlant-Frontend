@@ -20,6 +20,7 @@ function MyPot({
   addMyWish = false,
   homePage = false,
   onComment,
+  setIdPlantComment
 }) {
   const [modal, setModal] = useState(false);
   const [infoPlant, setInfoPlant] = useState(true);
@@ -142,8 +143,10 @@ function MyPot({
             <button
               className="buttonComment"
               onClick={() => {
-                setModalComment(true);
-                onComment(true);
+                setModalComment(true)
+                onComment(true)
+                setIdPlantComment(plant.id)
+
               }}
             >
               <MdOutlineComment />
