@@ -92,7 +92,16 @@ function MyPot({
           <button
             type="button"
             onClick={() => {
-              addPrivatePlants(dispatch, plant);
+              const sendPlant = {
+                "userId": JSON.parse(localStorage.getItem('user')).id,
+                "name": plant.name,
+                "sci_name": plant.sci_name,
+                "imgUrl": plant.imgUrl,
+                "info": plant.info,
+                "basic_care": plant.basic_care,
+                "color": plant.color
+              }
+              addPrivatePlants(dispatch, sendPlant);
             }}
             className="button--Pot"
           >
