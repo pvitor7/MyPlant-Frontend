@@ -21,7 +21,7 @@ function Menu({ abrir, sair }) {
         </header>
         <main>
           <ul>
-            <li onClick={() => pages('/personalPlants')}>
+            <li onClick={() => pages('/home')}>
               <p>Plantas</p>
             </li>
             <li onClick={() => pages('/informacoes')}>
