@@ -1,9 +1,9 @@
 /* eslint-disable */
-import React, { useEffect, useState } from "react";
-import ModalComments from "./styled";
-import { editMyPlant } from "../../store/modules/plants/thunks";
-import { BiUserCircle } from "react-icons/bi";
-import api from "../../services/api";
+import React, { useEffect, useState } from 'react';
+import { BiUserCircle } from 'react-icons/bi';
+import ModalComments from './styled';
+import { editMyPlant } from '../../store/modules/plants/thunks';
+import api from '../../services/api';
 
 function ModalCommentPlant({ onComment, setModalComment, plant }) {
   const token =
@@ -14,7 +14,7 @@ function ModalCommentPlant({ onComment, setModalComment, plant }) {
     userId: plant.userId,
     sci_name: plant.sci_name,
     imgUrl: plant.imgUrl,
-    basic_care: "precisa de muito sol",
+    basic_care: 'precisa de muito sol',
     color: plant.color,
     id: plant.id,
   });
@@ -22,7 +22,7 @@ function ModalCommentPlant({ onComment, setModalComment, plant }) {
   const [commentsPlants, setCommentsPlants] = useState([]);
 
   function seiLa() {
-    const id = plant.id;
+    const { id } = plant;
 
     api
       .get(`/comments?public_plantId=${id}`)
@@ -45,8 +45,8 @@ function ModalCommentPlant({ onComment, setModalComment, plant }) {
             type="button"
             className="button--CloseModal"
             onClick={() => {
-              setModalComment(false)
-              onComment(false)
+              setModalComment(false);
+              onComment(false);
             }}
           >
             x
@@ -57,19 +57,17 @@ function ModalCommentPlant({ onComment, setModalComment, plant }) {
         <div className="div--descriptions">
           <ul>
             {
-              commentsPlants.map((comment) => {
-                
-                return(
-            
-              <li key={comment.id}  className="li--comment">
-              <label className="label--comment"><BiUserCircle/>{
-              // comment.owner.name
-              "pessoa"
-              }</label>
-                <p>{comment.msg}</p>
+              commentsPlants.map((comment) => (
+
+                <li key={comment.id} className="li--comment">
+                  <label className="label--comment">
+                    <BiUserCircle />
+                    {comment.owner.name}
+                  </label>
+                  <p>{comment.msg}</p>
                 </li>
-              
-              )})
+
+              ))
             }
 
           </ul>

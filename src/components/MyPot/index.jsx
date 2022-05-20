@@ -131,7 +131,19 @@ function MyPot({
               <button
                 onClick={() => {
                   console.log('informações do card');
-                  wishListAdd(dispatch, plant);
+                  
+                  const sendPlant = {
+                    "userId": JSON.parse(localStorage.getItem('user')).id,
+                    "name": plant.name,
+                    "sci_name": plant.sci_name,
+                    "imgUrl": plant.imgUrl,
+                    "info": plant.info,
+                    "basic_care": plant.basic_care,
+                    "color": plant.color
+                  }
+                  console.log(sendPlant)
+
+                  wishListAdd(dispatch, sendPlant);
                   commentsThunk(plant.id);
                 }}
                 className="button--Pot"
