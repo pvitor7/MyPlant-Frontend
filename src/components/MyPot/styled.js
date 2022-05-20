@@ -40,6 +40,10 @@ const PlantCard = styled.div`
       background-color: var(--white);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       cursor: pointer;
+
+      :active {
+        box-shadow: inset 0 0 1em var(--lightGrey);
+      }
     }
 
     .h3--PlantTitle {
@@ -82,6 +86,10 @@ const PlantCard = styled.div`
       background-color: var(--white);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       cursor: pointer;
+
+      :active {
+        box-shadow: inset 0 0 1em var(--lightGrey);
+      }
     }
 
     .button--BiPencil {
@@ -112,7 +120,12 @@ const PlantCard = styled.div`
       color: #56b297;
       font-size: 20px;
       font-weight: bold;
+      
+      :active {
+        box-shadow: inset 0 0 1em var(--lightGrey);
+      }
     }
+
   }
 `;
 

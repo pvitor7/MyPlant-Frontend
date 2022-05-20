@@ -17,7 +17,9 @@ const wishList = (dispatch) => {
 const wishListAdd = (dispatch, plant) => {
   api
     .post('/wish_list', plant)
-    .then(() => wishList(dispatch));
+    .then(() => {
+      wishList(dispatch);
+    });
   // .catch((err) => console.log(err));
 };
 

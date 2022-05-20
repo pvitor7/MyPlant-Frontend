@@ -20,6 +20,8 @@ export const PersonalGarden = styled.div`
       font-size: 25px;
       color: #b7d251;
       height: 50px;
+
+      margin: 22px 0;
     }
 
     .div--MyGardens--area {
@@ -27,7 +29,7 @@ export const PersonalGarden = styled.div`
       flex-direction: column;
       width: 100%;
       max-width: 640px;
-      height: 90%;
+      height: 80%;
       align-items: center;
       justify-content: space-between;
     }
