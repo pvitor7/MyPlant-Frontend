@@ -57,7 +57,7 @@ function MyPot({
         )
       </p>
       <div className="div--CardButtons">
-        {token && myChild && (
+        {myChild && (
           <button
             type="button"
             className="button--BiPencil"
@@ -126,7 +126,7 @@ function MyPot({
               <FaInfo />
             </button>
 
-            {token && (
+            {(
               <button
                 onClick={() => {
                   console.log('informações do card');
