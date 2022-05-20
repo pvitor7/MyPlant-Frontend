@@ -19,7 +19,8 @@ function MyPot({
   myChild = false,
   addMyWish = false,
   homePage = false,
-  onComment
+  onComment,
+  setIdPlantComment
 }) {
   const [modal, setModal] = useState(false);
   const [infoPlant, setInfoPlant] = useState(true);
@@ -149,6 +150,7 @@ function MyPot({
               onClick={() => {
                 setModalComment(true)
                 onComment(true)
+                setIdPlantComment(plant.id)
               }}
             >
               <MdOutlineComment />
