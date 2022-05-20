@@ -8,7 +8,7 @@ function Menu({ abrir, sair }) {
   const redirecionamento = useHistory();
 
   function pages(destino) {
-    localStorage.clear()
+    // localStorage.clear()
     redirecionamento.push(destino);
   }
   const currentPage = window.location.href
