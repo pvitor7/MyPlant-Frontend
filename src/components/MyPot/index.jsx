@@ -1,17 +1,17 @@
 /* eslint-disable */
-import { BiFile, BiHeart, BiPencil } from "react-icons/bi";
-import React, { useState } from "react";
-import PlantCard from "./styled";
+import { BiFile, BiHeart, BiPencil } from 'react-icons/bi';
+import React, { useState } from 'react';
+import { MdOutlineComment } from 'react-icons/md';
+import { FaInfo } from 'react-icons/fa';
+import PlantCard from './styled';
 import {
   addPrivatePlants,
   deletePrivatePlants,
-} from "../../store/modules/plants/thunks";
-import ModalInfoPlant from "../ModalInfoPlant";
-import { wishListDelete, wishListAdd } from "../../store/modules/wishList/thunks";
-import { MdOutlineComment } from "react-icons/md";
-import { FaInfo } from "react-icons/fa";
-import { commentsThunk } from "../../store/modules/coments/thunks";
-import ModalCommentPlant from "../ModalCommentPlant";
+} from '../../store/modules/plants/thunks';
+import ModalInfoPlant from '../ModalInfoPlant';
+import { wishListDelete, wishListAdd } from '../../store/modules/wishList/thunks';
+import { commentsThunk } from '../../store/modules/coments/thunks';
+import ModalCommentPlant from '../ModalCommentPlant';
 
 function MyPot({
   dispatch,
@@ -26,15 +26,6 @@ function MyPot({
   const [infoPlant, setInfoPlant] = useState(true);
   const [comment, setComment] = useState(false);
   const [modalComment, setModalComment] = useState(false);
-
-  localStorage.setItem(
-    "token",
-    JSON.stringify(
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnppbmhvQG1haWwuY29tIiwiaWF0IjoxNjUyOTY4NTYyLCJleHAiOjE2NTI5NzIxNjIsInN1YiI6IjEifQ.-hy11VM8uO6z1GwkIFxlflsamnh8w1pnB1fk7fH2Mzg"
-    )
-  );
-  const token = JSON.parse(localStorage.getItem("token"));
-  // localStorage.clear()
 
   return (
     <PlantCard idPlant={plant.id}>
@@ -61,9 +52,13 @@ function MyPot({
         <img className="img--PlantImage" src={plant.imgUrl} />
       </div>
       <h3 className="h3--PlantTitle">{plant.name}</h3>
-      <p className="p--scientificName">({plant.sci_name})</p>
+      <p className="p--scientificName">
+        (
+        {plant.sci_name}
+        )
+      </p>
       <div className="div--CardButtons">
-        {token && myChild && (
+        {myChild && (
           <button
             type="button"
             className="button--BiPencil"
@@ -105,8 +100,8 @@ function MyPot({
           </button>
         )}
 
-        {addMyWish ||
-          (myChild && (
+        {addMyWish
+          || (myChild && (
             <button
               type="button"
               className="button--Pot"
@@ -132,10 +127,10 @@ function MyPot({
               <FaInfo />
             </button>
 
-            {token && (
+            {(
               <button
                 onClick={() => {
-                  console.log("informações do card");
+                  console.log('informações do card');
                   wishListAdd(dispatch, plant);
                   commentsThunk(plant.id);
                 }}
@@ -151,6 +146,7 @@ function MyPot({
                 setModalComment(true)
                 onComment(true)
                 setIdPlantComment(plant.id)
+
               }}
             >
               <MdOutlineComment />

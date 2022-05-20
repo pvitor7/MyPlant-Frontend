@@ -1,6 +1,6 @@
 /* eslint-disable */
 import api from '../../../services/api';
-import personalPlants from './actions';
+import { personalPlants, addMyGarden } from './actions';
 
 // Pegar plantas do usuário da API
 function getPrivatePlants(dispatch) {
@@ -28,9 +28,8 @@ export function addPrivatePlants(dispatch, plant) {
 
 // Editar planta do usuário pelo modal
 export function editMyPlant(plant, dispatch) {
-
-  console.log(plant)
-  console.log(plant.id)
+  console.log(plant);
+  console.log(plant.id);
   api
     .patch(`/plants/${plant.id}`, plant)
     .then((res) => {
