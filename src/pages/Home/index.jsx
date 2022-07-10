@@ -13,6 +13,7 @@ import { FaInfo, FaSearch } from "react-icons/fa";
 import { Modal } from "@mui/material";
 import MyPot from "../../components/MyPot";
 import { postPublicComments } from "../../store/modules/coments/thunks";
+import plants from "../../database/plants";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -21,13 +22,13 @@ function HomePage() {
     dispatch(getPublicPlants());
   }, []);
 
-  const allPlants = useSelector((state) => state.userPublic);
+  // const allPlants = useSelector((state) => state.userPublic); Por problemas com a API o redux foi inutilizado e o projeto está baseado em states por hora
 
   const colors = [
-    { value: "red", label: "Vermelho" },
-    { value: "yellow", label: "Amarelo" },
-    { value: "blue", label: "Azul" },
-    { value: "pink", label: "Rosa" },
+    { id: 1, value: "red", label: "Vermelho" },
+    { id: 2, value: "yellow", label: "Amarelo" },
+    { id: 3, value: "blue", label: "Azul" },
+    { id: 4, value: "pink", label: "Rosa" },
   ];
 
   const [search, setSearch] = useState("");
@@ -37,24 +38,23 @@ function HomePage() {
   const [showResults, setShowResults] = useState(null);
   const [modal, setModal] = useState(false);
   const [inputComment, setInputComment] = useState(false);
-  const [idPlantComment, setIdPlantComment] = useState('');
+  const [idPlantComment, setIdPlantComment] = useState("");
 
   useEffect(() => {
-    if (filteredPlants) {
+    
       if (color) {
-        const plantsColor = filteredPlants.filter(
+        const plantsColor = plants.filter(
           (plant) => plant.color === color
         );
-        console.log(plantsColor);
         setShowResults(plantsColor);
-      } else {
+      } 
+      else {
         setShowResults(filteredPlants);
       }
-    }
   }, [filteredPlants, color]);
 
   function hasColor(color) {
-    const plantsColor = filteredPlants.find((plant) => plant.color === color);
+    const plantsColor = filteredPlants?.find((plant) => plant.color === color);
     if (plantsColor) {
       return true;
     } else {
@@ -63,11 +63,10 @@ function HomePage() {
   }
 
   function searchInput() {
-    console.log(search);
+    setColor(null);
     setInput(search);
 
-    setColor(null);
-    const plantsFilter = allPlants.filter(({ name }) => {
+    const plantsFilter = plants.filter(({ name }) => {
       return name.toLowerCase().includes(search.toLowerCase());
     });
     setFilteredPlants(plantsFilter);
@@ -77,103 +76,74 @@ function HomePage() {
     <>
       <Header />
 
-      {showResults ? (
         <ContainerPlants>
           <div className="divButtons">
-            {showResults.length > 0 && (
-              <button onClick={() => setColor(null)}>Todas</button>
-            )}
-            {colors.map(({ value, label }) => {
+              <button onClick={
+                () => {setColor(null) 
+                 setFilteredPlants(plants)}
+                 }>Todas</button>
+
+            {colors.map(({id, value, label }) => {
               return (
-                <span key={value}>
-                  {hasColor(value) && (
-                    <button onClick={() => setColor(value)}>{label}</button>
-                  )}
+                <span key={id} >
+                    <button onClick={() => {setColor(value)}}>{label}</button>
                 </span>
               );
             })}
           </div>
 
           <ul className="divCards">
-            {showResults?.length === 0 ? (
-              <p>Não existe "{input}" no banco de dados.</p>
-            ) : (
-              showResults?.map((a, index) => {
-                return (
-                   <MyPot setIdPlantComment={setIdPlantComment} onComment={setInputComment} homePage key={index} plant={a}/>
-
-                  // <li key={index}>
-                  //   <button className="buttonInfo">
-                  //     <FaInfo />
-                  //   </button>
-                  //   <img src={a.imgUrl} alt="imgPlant" />
-                  //   <h4>{a.name}</h4>
-                  //   <button className="buttonComment">
-                  //     <MdOutlineComment />
-                  //   </button>
-                  // </li>
-                );
-              })
-            )}
+            {showResults == null
+              ? plants.map((a, index) => (
+                  <MyPot
+                    setIdPlantComment={setIdPlantComment}
+                    onComment={setInputComment}
+                    homePage
+                    key={index}
+                    plant={a}
+                  />
+                ))
+              : showResults.map((a, index) => {
+                  return (
+                    <MyPot
+                      setIdPlantComment={setIdPlantComment}
+                      onComment={setInputComment}
+                      homePage
+                      key={index}
+                      plant={a}
+                    />
+                  );
+                })}
           </ul>
         </ContainerPlants>
-      ) : (
-        <Container>
-          <section>
-            <div>
-              <h2 className="lightGreen">Encontre a planta que você procura</h2>
-              <img src={Lupa} alt="icone" />
-            </div>
-            <div className="revert">
-              <img src={ImgBuildGarden} alt="icone" />
-              <h2 className="darkGreen">Crie seu Jardim Virtual</h2>
-            </div>
-            <div>
-              <h2 className="lightGreen">Adicione à sua lista de desejos</h2>
-              <img src={ImgAddGarden} alt="icone" />
-            </div>
-            <div className="revert">
-              <img src={ImgSeeComment} alt="icone" />
-              <h2 className="darkGreen">
-                Veja dicas e comentários de amantes de plantas como você!
-              </h2>
-            </div>
-          </section>
-        </Container>
-      )}
 
       <Footer>
-      { inputComment === true ? (
-            <div>
-              <input
+        {inputComment === true ? (
+          <div>
+            <input
               name="buscar"
               value={search}
               placeholder="Busque por nome"
               onChange={(e) => {
                 setInputComment(e.target.value);
-              }
-              }
-              />
-              <button 
-              onClick={() => postPublicComments(idPlantComment, search)}
-              >
-                <MdOutlineComment />
-              </button>
-            </div>
+              }}
+            />
+            <button onClick={() => postPublicComments(idPlantComment, search)}>
+              <MdOutlineComment />
+            </button>
+          </div>
         ) : (
-            <div>
-              <input
+          <div>
+            <input
               name="buscar"
               value={search}
               placeholder="Busque por nome"
               onChange={(e) => setSearch(e.target.value)}
-              />
-              <button 
-              onClick={() => searchInput()}
-              >
-                <FaSearch />
-              </button>
-            </div>
+            />
+            <button onClick={() => searchInput()}>
+              <FaSearch />
+            </button>
+          </div>
         )}
       </Footer>
     </>

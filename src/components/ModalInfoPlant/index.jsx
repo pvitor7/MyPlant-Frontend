@@ -70,7 +70,9 @@ function ModalInfoPlant({ setModal, plant, infoPlant = false, comment = false })
 
  
             <div className="div--information">
+           
             <label className="label--info">Informações:</label>
+           
             {infoPlant === false  ? (
               <p className="p--info">{plant.info}</p>
             ) : (
@@ -90,8 +92,12 @@ function ModalInfoPlant({ setModal, plant, infoPlant = false, comment = false })
           infoPlant == false &&
 
             <div className="div--basicCare">
+              {plant.utility? (
+              <label className="label--basicCare">Uso caseiro comum:</label>
+              ):(
               <label className="label--basicCare">Cuidados básicos:</label>
-              <p>{plant.basic_care}</p>
+              )}
+              <p className="p--basicCare-description">{plant.basic_care}</p>
             </div>
         }
 

@@ -1,84 +1,6 @@
 /*eslint-disable*/
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 105vh;
-  padding-top: 30px;
-  padding-bottom: 85px;
-  
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 90%;
-  }
-
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  }
-
-  div > h2 {
-    width: 370px;
-  }
-
-  div > img {
-    min-width: 100px;
-    max-width: 200px;
-    object-fit: contain;
-    align-self: center;
-  }
-
-  .lightGreen {
-    color: var(--green);
-    font-family: 'nunito';
-    font-weight: bold;
-    font-size: 32px;
-    align-self: left;
-  }
-
-  .darkGreen {
-    color: var(--blue);
-    font-family: 'nunito';
-    font-weight: bold;
-    font-size: 32px;
-    align-self: right;
-  }
-
-  @media screen and (min-width: 768px) {
-    height: 80vh;
-
-    div {
-      justify-content: center;
-
-    }
-  }
-
-  @media screen and (min-width: 1024px){
-  
-    height: 80vh;
-
-    div{
-      justify-content: space-between;
-    }
-
-    .revert {
-      flex-direction: row-reverse;
-    }
-
-    section {
-      width: 50%;
-    }
-  }
-  
-`;
-
 export const Footer = styled.div`
   position: fixed;
   top: 91%;
@@ -137,8 +59,6 @@ export const ContainerPlants = styled.div`
   gap:10px;
   align-items: center;
   height: auto;
-  padding-top: 20px;
-
 
   .divButtons {
     display: none;
@@ -172,8 +92,18 @@ export const ContainerPlants = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    overflow: scroll;
+    overflow-x: scroll;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    ::-webkit-scrollbar {
+      background: var(--Grey-3);
+      border-radius: 3px;
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--Grey-2);
+      border-radius: 3px;
+    }
   }
   
   li {
@@ -203,20 +133,6 @@ export const ContainerPlants = styled.div`
     background-color: var(--grey);
   }
 
-  /* .buttonInfo {
-    position: absolute;
-    top: 6px;
-    right: 7px;
-    border-radius: 100px;
-    border: 1px solid var(--white);
-    width: 31px;
-    height: 31px;
-
-    color: var(--blue);
-    background-color: var(--white);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-  } */
 
   h4 {
     color: var(--green);
@@ -224,17 +140,6 @@ export const ContainerPlants = styled.div`
     font-weight: 500;
     font-family: 'Inter';
   }
-
-  /* .buttonComment {
-    color: var(--blue);
-    width: 20px;
-    height: 20px;
-    border-radius: 100px;
-    border: 1px solid var(--white);
-    background-color: var(--white);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-  } */
 
   @media screen and (min-width: 768px) {
     height: 80vh;

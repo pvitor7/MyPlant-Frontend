@@ -48,7 +48,8 @@ const PlantCard = styled.div`
 
     .h3--PlantTitle {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       color: #b7d251;
       font-family: "Inter", sans-serif;

@@ -6,7 +6,7 @@ const ModalInfo = styled.div`
     position: absolute;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100vw;
-    height: 102vh;
+    height: 100vh;
     right: 0;
     left: 0;
     bottom: 0;
@@ -56,6 +56,7 @@ const ModalInfo = styled.div`
 
     .info--image {
       width: 100%;
+      height: 100%;
       border-radius: 15px 15px 0 0;
       object-fit: cover;
     }
@@ -70,14 +71,27 @@ const ModalInfo = styled.div`
       height: 67%;
       width: 90%;
       align-items: center;
-      justify-content: space-between;
+      gap: 10px;
+      overflow: scroll;
+      /* justify-content: space-between; */
+
+      ::-webkit-scrollbar {
+      background: var(--Grey-3);
+      border-radius: 3px;
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--Grey-2);
+      border-radius: 3px;
+    }
     }
 
     label {
       display: flex;
       background-color: #56b297;
       width: 70%;
-      height: 22px;
+      height: 20px;
       border-radius: 3px;
       justify-content: center;
       align-items: center;
@@ -91,7 +105,6 @@ const ModalInfo = styled.div`
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      height: 15%;
       color: #b7d251;
       margin-top: 10px;
     }
@@ -112,28 +125,28 @@ const ModalInfo = styled.div`
 
     p {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       font-size: 18px;
-      margin: 10px;
       width: 90%;
+      margin: 5px;
     }
 
     .p--info {
-      height: 80%;
-      overflow: auto;
+      height: auto;
+      /* overflow-x: scroll; */
       /* overflow: hidden;
       text-overflow: ellipsis; */
     }
 
     /* Hide scrollbar for Chrome, Safari and Opera */
     .p--info::-webkit-scrollbar {
-      display: none;
+      /* display: none; */
     }
 
     /* Hide scrollbar for IE, Edge and Firefox */
     .p--info {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
+      /* -ms-overflow-style: none; IE and Edge */
+      /* scrollbar-width: none; Firefox */
     }
 
 
@@ -143,9 +156,10 @@ const ModalInfo = styled.div`
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 15%;
+      height: auto;
       width: 100%;
       color: #b7d251;
+      margin: 0;
     }
 
     
@@ -156,7 +170,6 @@ const ModalInfo = styled.div`
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      max-height: 55%;
       text-align: center;
       color: #b7d251;
       overflow: hidden;
@@ -166,6 +179,7 @@ const ModalInfo = styled.div`
     .input--editInfo{
       bottom: auto;
       width: 90%;
+      height: auto;
       border: none;
       border-radius: 10px;
       background-color: #F2F2F4;
@@ -184,7 +198,22 @@ const ModalInfo = styled.div`
       width: 100%;
       color: #b7d251;
       margin-bottom: 10px;
-      height: 15%;
+      height: auto;
+    }
+
+    .p--basicCare-description{
+      /* overflow: scroll; */
+      ::-webkit-scrollbar {
+      background: var(--Grey-3);
+      border-radius: 3px;
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--Grey-2);
+      border-radius: 3px;
+    }
+
     }
 
     .div--editDeleteButton{
