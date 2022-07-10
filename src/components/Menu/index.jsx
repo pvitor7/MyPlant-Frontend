@@ -19,8 +19,8 @@ function Menu({ abrir, sair }) {
         <header>
           <p>Busque, conheça, cuide!</p>
         </header>
-        <main>
-          <ul>
+        <main className='menu-container'>
+          <ul className='m.ul'>
             <li onClick={() => pages('/home')}>
               <p>Plantas</p>
             </li>

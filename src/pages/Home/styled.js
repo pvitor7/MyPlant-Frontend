@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import styled from 'styled-components';
+import { appearFromRight } from '../../components/MyPot/styled';
 
 export const Footer = styled.div`
   position: fixed;
@@ -78,6 +79,7 @@ export const ContainerPlants = styled.div`
     height: 47px;
     width: 138px;
     cursor: pointer;
+    animation: ${appearFromRight} 1s;
   }
 
   ul {

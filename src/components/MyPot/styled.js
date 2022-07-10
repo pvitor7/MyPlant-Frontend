@@ -1,6 +1,18 @@
 /* eslint-disable */
 
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const appearFromRight = keyframes`
+  from {
+    opacity: 0; 
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
 
 const PlantCard = styled.div`
   @media (min-width: 320px) {
@@ -13,6 +25,7 @@ const PlantCard = styled.div`
     border-radius: 15px;
     background-color: #ffffff;
     box-shadow: 0px 5px 5px gray;
+    animation: ${appearFromRight} 1s;
 
     .div--cardImage {
       height: 50%;
@@ -121,12 +134,11 @@ const PlantCard = styled.div`
       color: #56b297;
       font-size: 20px;
       font-weight: bold;
-      
+
       :active {
         box-shadow: inset 0 0 1em var(--lightGrey);
       }
     }
-
   }
 `;
 
